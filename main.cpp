@@ -37,6 +37,139 @@ public:
         marca = {};
         llantas = {};
     }
+    float getManejo()
+    {
+        return manejo;
+    }
+    float getFrenado()
+    {
+        return frenado;
+    }
+    float getOffroad()
+    {
+        return offroad;
+    }
+    float getValor()
+    {
+        return valor;
+    }
+    float getSalida()
+    {
+        return salida;
+    }
+    float getAceleracion()
+    {
+        return aceleracion;
+    }
+    float getVelocidad()
+    {
+        return velocidad;
+    }
+    float getPeso()
+    {
+        return peso;
+    }
+    int getModelo()
+    {
+        return modelo;
+    }
+    int getPotencia()
+    {
+        return potencia;
+    }
+    int getTorque()
+    {
+        return torque;
+    }
+    string getTipo()
+    {
+        return tipo;
+    }
+    Marca *getMarca()
+    {
+        return marca;
+    }
+    Llanta *getLlantas()
+    {
+        return llantas;
+    }
+    void setManejo(float manejo)
+    {
+        this->manejo = manejo;
+    }
+    void setFrenado(float frenado)
+    {
+        this->frenado = frenado;
+    }
+    void setOffroad(float offroad)
+    {
+        this->offroad = offroad;
+    }
+    void setValor(float valor)
+    {
+        this->valor = valor;
+    }
+    void setSalida(float salida)
+    {
+        this->salida = salida;
+    }
+    void setAceleracion(float aceleracion)
+    {
+        this->aceleracion = aceleracion;
+    }
+    void setVelocidad(float velocidad)
+    {
+        this->velocidad = velocidad;
+    }
+    void setPeso(float peso)
+    {
+        this->peso = peso;
+    }
+    void setModelo(int modelo)
+    {
+        this->modelo = modelo;
+    }
+    void setPotencia(int potencia)
+    {
+        this->potencia = potencia;
+    }
+    void setTorque(int torque)
+    {
+        this->torque = torque;
+    }
+    void setTipo(string tipo)
+    {
+        this->tipo = tipo;
+    }
+    void setMarca(Marca *marca)
+    {
+        this->marca = marca;
+    }
+    void setLlantas(Llanta *llantas)
+    {
+        this->llantas = llantas;
+    }
+    virtual string claseVehiculo() = 0;
+    virtual void print(ostream &out) = 0;
+    friend ostream operator<<(ostream &out, Vehiculo *vehiculo)
+    {
+        out << "Manejo: " << vehiculo->manejo << endl
+            << "Frenado: " << vehiculo->frenado << endl
+            << "Frenado: " << vehiculo->offroad << endl
+            << "Frenado: " << vehiculo->valor << endl
+            << "Frenado: " << vehiculo->salida << endl
+            << "Frenado: " << vehiculo->aceleracion << endl
+            << "Frenado: " << vehiculo->velocidad << endl
+            << "Frenado: " << vehiculo->peso << endl
+            << "Frenado: " << vehiculo->modelo << endl
+            << "Frenado: " << vehiculo->potencia << endl
+            << "Frenado: " << vehiculo->torque << endl
+            << "Frenado: " << vehiculo->tipo << endl
+            << "Frenado: " << vehiculo->marca << endl
+            << "Frenado: " << vehiculo->llantas << endl;
+        vehiculo->print(out);
+        return out;
+    }
 };
 
 class Marca
