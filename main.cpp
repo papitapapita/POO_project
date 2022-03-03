@@ -3,6 +3,160 @@
 
 using namespace std;
 
+class Marca
+{
+    string nombre, pais;
+    int anio_fundacion;
+
+public:
+    Marca(string nombre, string pais, int anio_fundacion)
+    {
+        this->nombre = nombre;
+        this->pais = pais;
+        this->anio_fundacion = anio_fundacion;
+    }
+    Marca()
+    {
+        nombre = pais = "";
+        anio_fundacion = 0;
+    }
+    string getNombre()
+    {
+        return nombre;
+    }
+    string getPais()
+    {
+        return pais;
+    }
+    int getAnioFundacion()
+    {
+        return anio_fundacion;
+    }
+    void setNombre(string nombre)
+    {
+        this->nombre = nombre;
+    }
+    void setPais(string pais)
+    {
+        this->pais = pais;
+    }
+    void setAnioFundacion(int anio_fundacion)
+    {
+        this->anio_fundacion = anio_fundacion;
+    }
+};
+
+class Llanta
+{
+    string rin, trazado_llanta;
+    float diametro_rin;
+
+public:
+    Llanta()
+    {
+        rin = trazado_llanta = "";
+        diametro_rin = 0;
+    }
+    Llanta(string rin, string trazado_llanta, float diametro_rin)
+    {
+        this->rin = rin;
+        this->trazado_llanta = trazado_llanta;
+        this->diametro_rin = diametro_rin;
+    }
+    string getRin()
+    {
+        return rin;
+    }
+    string getTrazadoLlanta()
+    {
+        return trazado_llanta;
+    }
+    float getDiametroRin()
+    {
+        return diametro_rin;
+    }
+    void setRin(string rin)
+    {
+        this->rin = rin;
+    }
+    void setTrazadoLlanta(string trazado_llanta)
+    {
+        this->trazado_llanta = trazado_llanta;
+    }
+    void setDiametroRin(float diametro_rin)
+    {
+        this->diametro_rin = diametro_rin;
+    }
+};
+
+class Motor
+{
+    string admision, inyeccion, encendido, escape, arbol_levas, valvulas, cilindrada, pistones, turbo, intercooler, aceite;
+
+public:
+    Motor()
+    {
+        admision = inyeccion = encendido = escape = arbol_levas = valvulas = cilindrada = pistones = turbo = intercooler = aceite = "";
+    }
+    Motor(string admision, string inyeccion, string encendido, string escape, string arbol_levas, string valvulas, string cilindrada, string pistones, string turbo, string intercooler, string aceite)
+    {
+        this->admision = admision;
+        this->inyeccion = inyeccion;
+        this->encendido = encendido;
+        this->escape = escape;
+        this->arbol_levas = arbol_levas;
+        this->valvulas = valvulas;
+        this->cilindrada = cilindrada;
+        this->pistones = pistones;
+        this->turbo = turbo;
+        this->intercooler = intercooler;
+        this->aceite = aceite;
+    }
+    string getAdmision()
+    {
+        return admision;
+    }
+    string getInyeccion()
+    {
+        return inyeccion;
+    }
+    string getEncendido()
+    {
+        return encendido;
+    }
+    string getEscape()
+    {
+        return escape;
+    }
+    string getArbolLevas()
+    {
+        return arbol_levas;
+    }
+    string getValvulas()
+    {
+        return valvulas;
+    }
+    string getCilindrada()
+    {
+        return cilindrada;
+    }
+    string getPistones()
+    {
+        return pistones;
+    }
+    string getTurbo()
+    {
+        return turbo;
+    }
+    string getIntercooler()
+    {
+        return intercooler;
+    }
+    string getAceite()
+    {
+        return aceite;
+    }
+};
 class Vehiculo
 {
     float manejo, frenado, offroad, valor, salida, aceleracion, velocidad, peso;
@@ -151,7 +305,7 @@ public:
     }
     virtual string claseVehiculo() = 0;
     virtual void print(ostream &out) = 0;
-    friend ostream operator<<(ostream &out, Vehiculo *vehiculo)
+    friend ostream &operator<<(ostream &out, Vehiculo *vehiculo)
     {
         out << "Manejo: " << vehiculo->manejo << endl
             << "Frenado: " << vehiculo->frenado << endl
@@ -169,126 +323,6 @@ public:
             << "Frenado: " << vehiculo->llantas << endl;
         vehiculo->print(out);
         return out;
-    }
-};
-
-class Marca
-{
-    string nombre, pais;
-    int anio_fundacion;
-
-public:
-    Marca(string nombre, string pais, int anio_fundacion)
-    {
-        this->nombre = nombre;
-        this->pais = pais;
-        this->anio_fundacion = anio_fundacion;
-    }
-    Marca()
-    {
-        nombre = pais = "";
-        anio_fundacion = 0;
-    }
-    string getNombre()
-    {
-        return nombre;
-    }
-    string getPais()
-    {
-        return pais;
-    }
-    int getAnioFundacion()
-    {
-        return anio_fundacion;
-    }
-    void setNombre(string nombre)
-    {
-        this->nombre = nombre;
-    }
-    void setPais(string pais)
-    {
-        this->pais = pais;
-    }
-    void setAnioFundacion(int anio_fundacion)
-    {
-        this->anio_fundacion = anio_fundacion;
-    }
-};
-
-class Llanta
-{
-public:
-    Llanta()
-    {
-    }
-};
-
-class Motor
-{
-    string admision, inyeccion, encendido, escape, arbol_levas, valvulas, cilindrada, pistones, turbo, intercooler, aceite;
-
-public:
-    Motor()
-    {
-        admision = inyeccion = encendido = escape = arbol_levas = valvulas = cilindrada = pistones = turbo = intercooler = aceite = "";
-    }
-    Motor(string admision, string inyeccion, string encendido, string escape, string arbol_levas, string valvulas, string cilindrada, string pistones, string turbo, string intercooler, string aceite)
-    {
-        this->admision = admision;
-        this->inyeccion = inyeccion;
-        this->encendido = encendido;
-        this->escape = escape;
-        this->arbol_levas = arbol_levas;
-        this->valvulas = valvulas;
-        this->cilindrada = cilindrada;
-        this->pistones = pistones;
-        this->turbo = turbo;
-        this->intercooler = intercooler;
-        this->aceite = aceite;
-    }
-    string getAdmision()
-    {
-        return admision;
-    }
-    string getInyeccion()
-    {
-        return inyeccion;
-    }
-    string getEncendido()
-    {
-        return encendido;
-    }
-    string getEscape()
-    {
-        return escape;
-    }
-    string getArbolLevas()
-    {
-        return arbol_levas;
-    }
-    string getValvulas()
-    {
-        return valvulas;
-    }
-    string getCilindrada()
-    {
-        return cilindrada;
-    }
-    string getPistones()
-    {
-        return pistones;
-    }
-    string getTurbo()
-    {
-        return turbo;
-    }
-    string getIntercooler()
-    {
-        return intercooler;
-    }
-    string getAceite()
-    {
-        return aceite;
     }
 };
 
