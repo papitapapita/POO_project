@@ -382,6 +382,7 @@ public:
     {
         return "No Motorizado";
     }
+    virtual string TipoVehiculo() = 0;
 };
 
 class Bicicleta : public NoMotorizado
@@ -621,6 +622,125 @@ class Motorizados : public Vehiculo
     Motor *motor;
     PlataformaManejo *plataformaManejo;
     Transmision *transmision;
+
+public:
+    Motorizados() : Vehiculo()
+    {
+        motor = new Motor();
+        plataformaManejo = {};
+        transmision = {};
+    }
+    Motorizados(Motor *motor, PlataformaManejo *plataformaManejo, Transmision *transmision)
+    {
+    }
+    Motor *getMotor()
+    {
+        return motor;
+    }
+    PlataformaManejo *getPlataformaManejo()
+    {
+        return plataformaManejo;
+    }
+    Transmision *getTransmision()
+    {
+        return transmision;
+    }
+    void setMotor(Motor *motor)
+    {
+        this->motor = motor;
+    }
+    void setPlataformaManejo(PlataformaManejo *plataformaManejo)
+    {
+        this->plataformaManejo = plataformaManejo;
+    }
+    void setTransmision(Transmision *transmision)
+    {
+        this->transmision = transmision;
+    }
+    string claseVehiculo() override
+    {
+        return "Motorizado";
+    }
+    virtual string TipoVehiculo() = 0;
+};
+
+class Carro : public Motorizados
+{
+    int cantidadPuestos;
+
+public:
+    Carro() : Motorizados()
+    {
+        cantidadPuestos = 0;
+    }
+    Carro(Motor *motor, PlataformaManejo *plataformaManejo, Transmision *transmision, int cantidadPuestos) : Motorizados(motor, plataformaManejo, transmision)
+    {
+        this->cantidadPuestos = cantidadPuestos;
+    }
+    int getCantidadPuestos()
+    {
+        return cantidadPuestos;
+    }
+    void setCantidadPuestos()
+    {
+        this->cantidadPuestos = cantidadPuestos;
+    }
+    string TipoVehiculo() override
+    {
+        return "Carro";
+    }
+};
+class Moto : public Motorizados
+{
+    string manillar;
+
+public:
+    Moto() : Motorizados()
+    {
+        manillar = "";
+    }
+    Moto(Motor *motor, PlataformaManejo *plataformaManejo, Transmision *transmision, string manillar) : Motorizados(motor, plataformaManejo, transmision)
+    {
+        this->manillar = manillar;
+    }
+    string getManillar()
+    {
+        return manillar;
+    }
+    void setManillar()
+    {
+        this->manillar = manillar;
+    }
+    string TipoVehiculo() override
+    {
+        return "Moto";
+    }
+};
+class Camion : public Motorizados
+{
+    float capacidadCarga;
+
+public:
+    Camion() : Motorizados()
+    {
+        capacidadCarga = 0;
+    }
+    Camion(Motor *motor, PlataformaManejo *plataformaManejo, Transmision *transmision, float capacidadCarga) : Motorizados(motor, plataformaManejo, transmision)
+    {
+        this->capacidadCarga = capacidadCarga;
+    }
+    float getCapacidadCarga()
+    {
+        return capacidadCarga;
+    }
+    void setCapacidadCarga()
+    {
+        this->capacidadCarga = capacidadCarga;
+    }
+    string TipoVehiculo() override
+    {
+        return "Camion";
+    }
 };
 
 int main()
