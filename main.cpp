@@ -156,6 +156,50 @@ public:
     {
         return aceite;
     }
+    void setAdmision(string admision)
+    {
+        this->admision = admision;
+    }
+    void setInyeccion(string inyeccion)
+    {
+        this->inyeccion = inyeccion;
+    }
+    void setEncendido(string encendido)
+    {
+        this->encendido = encendido;
+    }
+    void setEscape(string escape)
+    {
+        this->escape = escape;
+    }
+    void setArbolLevas(string arbol_levas)
+    {
+        this->arbol_levas = arbol_levas;
+    }
+    void setValvulas(string valvulas)
+    {
+        this->valvulas = valvulas;
+    }
+    void setCilindrada(string cilindrada)
+    {
+        this->cilindrada = cilindrada;
+    }
+    void setPistones(string pistones)
+    {
+        this->pistones = pistones;
+    }
+    void setTurbo(string turbo)
+    {
+        this->turbo = turbo;
+    }
+    void setIntercooler(string intercooler)
+    {
+        this->intercooler = intercooler;
+    }
+    void setAceite(string aceite)
+    {
+        this->aceite = aceite;
+    }
 };
 class Vehiculo
 {
@@ -308,40 +352,85 @@ public:
     {
         out << "Manejo: " << vehiculo->manejo << endl
             << "Frenado: " << vehiculo->frenado << endl
-            << "Frenado: " << vehiculo->offroad << endl
-            << "Frenado: " << vehiculo->valor << endl
-            << "Frenado: " << vehiculo->salida << endl
-            << "Frenado: " << vehiculo->aceleracion << endl
-            << "Frenado: " << vehiculo->velocidad << endl
-            << "Frenado: " << vehiculo->peso << endl
-            << "Frenado: " << vehiculo->modelo << endl
-            << "Frenado: " << vehiculo->potencia << endl
-            << "Frenado: " << vehiculo->torque << endl
-            << "Frenado: " << vehiculo->tipo << endl
-            << "Frenado: " << vehiculo->marca << endl
-            << "Frenado: " << vehiculo->llantas << endl;
+            << "Offroad: " << vehiculo->offroad << endl
+            << "Valor: " << vehiculo->valor << endl
+            << "Salida: " << vehiculo->salida << endl
+            << "Aceleración: " << vehiculo->aceleracion << endl
+            << "Velocidad: " << vehiculo->velocidad << endl
+            << "Peso: " << vehiculo->peso << endl
+            << "Modelo: " << vehiculo->modelo << endl
+            << "Potencia: " << vehiculo->potencia << endl
+            << "Torque: " << vehiculo->torque << endl
+            << "Tipo: " << vehiculo->tipo << endl
+            << "Marca: " << vehiculo->marca << endl
+            << "Llantas: " << vehiculo->llantas << endl;
         vehiculo->print(out);
         return out;
     }
 };
 
+class NoMotorizado : public Vehiculo
+{
+public:
+    NoMotorizado() : Vehiculo()
+    {
+    }
+    NoMotorizado(float manejo, float frenado, float offroad, float valor, float salida, float aceleracion, float velocidad, float peso, int modelo, int potencia, int torque, string tipo, Marca *marca, Llanta *llantas) : Vehiculo(manejo, frenado, offroad, valor, salida, aceleracion, velocidad, peso, modelo, potencia, torque, tipo, marca, llantas)
+    {
+    }
+    string claseVehiculo() override
+    {
+        return "No Motorizado";
+    }
+};
+
+class Bicicleta : public NoMotorizado
+{
+    string sillin, marco;
+
+public:
+    Bicicleta() : NoMotorizado()
+    {
+        sillin = "";
+        marco = "";
+    }
+    Bicicleta(float manejo, float frenado, float offroad, float valor, float salida, float aceleracion, float velocidad, float peso, int modelo, int potencia, int torque, string tipo, Marca *marca, Llanta *llantas, string sillin, string marco) : NoMotorizado(manejo, frenado, offroad, valor, salida, aceleracion, velocidad, peso, modelo, potencia, torque, tipo, marca, llantas)
+    {
+        this->sillin = sillin;
+        this->marco = marco;
+    }
+    string getSillin()
+    {
+        return sillin;
+    }
+    string getMarco()
+    {
+        return marco;
+    }
+    void setSillin(string sillin)
+    {
+        this->sillin = sillin;
+    }
+    void setMarco(string marco)
+    {
+        this->marco = marco;
+    }
+};
+
 class PlataformaManejo
 {
-    string frenos, kitAmortiguadores, barraEstabilizadora, refuerzoChasis, reduccionPeso, jaulaAntivuelco;
+    string frenos, kitAmortiguadores, reduccionPeso;
 
 public:
     PlataformaManejo()
     {
-        frenos = kitAmortiguadores = barraEstabilizadora = refuerzoChasis = reduccionPeso = jaulaAntivuelco = "";
+        frenos = kitAmortiguadores = reduccionPeso = "";
     }
-    PlataformaManejo(string frenos, string kitAmortiguadores, string barraEstabilizadora, string refuerzoChasis, string reduccionPeso, string jaulaAntivuelco)
+    PlataformaManejo(string frenos, string kitAmortiguadores, string reduccionPeso)
     {
         this->frenos = frenos;
         this->kitAmortiguadores = kitAmortiguadores;
-        this->barraEstabilizadora = barraEstabilizadora;
-        this->refuerzoChasis = refuerzoChasis;
         this->reduccionPeso = reduccionPeso;
-        this->jaulaAntivuelco = jaulaAntivuelco;
     }
     string getFrenos()
     {
@@ -351,6 +440,44 @@ public:
     {
         return kitAmortiguadores;
     }
+
+    string getReduccionPeso()
+    {
+        return reduccionPeso;
+    }
+
+    void setFrenos(string frenos)
+    {
+        this->frenos = frenos;
+    }
+    void setKitAmortiguadores(string kitAmortiguadores)
+    {
+        this->kitAmortiguadores = kitAmortiguadores;
+    }
+
+    void setReduccionPeso(string reduccionPeso)
+    {
+        this->reduccionPeso = reduccionPeso;
+    }
+
+    virtual string TipoPlataformaManejo() = 0;
+};
+
+class PlataformaManejoCarro : public PlataformaManejo
+{
+    string barraEstabilizadora, refuerzoChasis, jaulaAntivuelco;
+
+public:
+    PlataformaManejoCarro() : PlataformaManejo()
+    {
+        barraEstabilizadora = refuerzoChasis = jaulaAntivuelco = "";
+    }
+    PlataformaManejoCarro(string frenos, string kitAmortiguadores, string reduccionPeso, string barraEstabilizadora, string refuerzoChasis, string jaulaAntivuelco) : PlataformaManejo(frenos, kitAmortiguadores, reduccionPeso)
+    {
+        this->barraEstabilizadora = barraEstabilizadora;
+        this->refuerzoChasis = refuerzoChasis;
+        this->jaulaAntivuelco = jaulaAntivuelco;
+    }
     string getBarraEstabilizadora()
     {
         return barraEstabilizadora;
@@ -359,21 +486,9 @@ public:
     {
         return refuerzoChasis;
     }
-    string getReduccionPeso()
-    {
-        return reduccionPeso;
-    }
     string getJaulaAntivuelco()
     {
         return jaulaAntivuelco;
-    }
-    void setFrenos(string frenos)
-    {
-        this->frenos = frenos;
-    }
-    void setKitAmortiguadores(string kitAmortiguadores)
-    {
-        this->kitAmortiguadores = kitAmortiguadores;
     }
     void setBarraEstabilizadora(string barraEstabilizadora)
     {
@@ -383,13 +498,27 @@ public:
     {
         this->refuerzoChasis = refuerzoChasis;
     }
-    void setReduccionPeso(string reduccionPeso)
-    {
-        this->reduccionPeso = reduccionPeso;
-    }
     void setJaulaAntivuelco(string jaulaAntivuelco)
     {
         this->jaulaAntivuelco = jaulaAntivuelco;
+    }
+    string TipoPlataformaManejo() override
+    {
+        return "Carro";
+    }
+};
+class PlataformaManejoMoto : public PlataformaManejo
+{
+public:
+    PlataformaManejoMoto() : PlataformaManejo()
+    {
+    }
+    PlataformaManejoMoto(string frenos, string kitAmortiguadores, string reduccionPeso) : PlataformaManejo(frenos, kitAmortiguadores, reduccionPeso)
+    {
+    }
+    string TipoPlataformaManejo() override
+    {
+        return "Moto";
     }
 };
 
@@ -408,23 +537,19 @@ class Transmision : public TipoConduccion
 public:
     Transmision()
     {
-        tipoTransmision = lineaTransmision = "";
+        tipoTransmision = "";
         clutch = false;
     }
-    Transmision(string tipoTransmision, string lineaTransmision, bool clutch)
+    Transmision(string tipoTransmision, bool clutch)
     {
         this->tipoTransmision = tipoTransmision;
-        this->lineaTransmision = lineaTransmision;
         this->clutch = clutch;
     }
     string getTipoTransmision()
     {
         return tipoTransmision;
     }
-    string getLineaTransmision()
-    {
-        return lineaTransmision;
-    }
+
     bool getClutch()
     {
         return clutch;
@@ -433,10 +558,7 @@ public:
     {
         this->tipoTransmision = tipoTransmision;
     }
-    void setLineaTransmision(string lineaTransmision)
-    {
-        this->lineaTransmision = lineaTransmision;
-    }
+
     void setClutch(bool clutch)
     {
         this->clutch = clutch;
@@ -445,7 +567,6 @@ public:
     friend ostream &operator<<(ostream &out, Transmision *transmision)
     {
         out << "Tipo de Transmisión: " << transmision->tipoTransmision << endl
-            << "Linea de Transmisión: " << transmision->lineaTransmision << endl
             << "Clutch: " << (transmision->clutch ? "Sí" : "No") << endl;
         transmision->print(out);
         return out;
@@ -458,13 +579,42 @@ public:
     TransmisionMoto() : Transmision()
     {
     }
-    TransmisionMoto(string tipoTransmision, string lineaTransmision, bool clutch) : Transmision(tipoTransmision, lineaTransmision, clutch)
+    TransmisionMoto(string tipoTransmision, bool clutch) : Transmision(tipoTransmision, clutch)
     {
+    }
+    void print(ostream &out)
+    {
+        out << "Automatico: " << Automatico();
     }
 };
 
 class TransmisionCarro : public Transmision
 {
+    string diferencial, lineaTransmision;
+
+public:
+    TransmisionCarro()
+    {
+        diferencial = lineaTransmision = "";
+    }
+    TransmisionCarro(string tipoTransmision, bool clutch, string diferencial, string lineaTransmision) : Transmision(tipoTransmision, clutch)
+    {
+        this->diferencial = diferencial;
+        this->lineaTransmision = lineaTransmision;
+    }
+    void setLineaTransmision(string lineaTransmision)
+    {
+        this->lineaTransmision = lineaTransmision;
+    }
+    string getLineaTransmision()
+    {
+        return lineaTransmision;
+    }
+    void print(ostream &out)
+    {
+        out << "Diferencial: " << diferencial << endl
+            << "Linea de Transmisión: " << lineaTransmision << "Automático: " << Automatico();
+    }
 };
 class Motorizados : public Vehiculo
 {
