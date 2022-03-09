@@ -1,30 +1,23 @@
 #include <iostream>
 #include "vector"
+#include "vehiculo.h"
+#include "Llanta.h"
+#include "Marca.h"
+#include "Motor.h"
+#include "NoMotorizado.h"
+#include "Bicicleta.h"
+#include "TipoConduccion.h"
+#include "Carro.h"
+#include "Moto.h"
+#include "Motorizados.h"
+#include "Transmision.h"
+#include "TransmisionCarro.h"
+#include "TransmisionMoto.h"
+#include "PlataformaManejo.h"
+#include "PlataformaManejoCarro.h"
+#include "PlataformaManejoMoto.h"
 
 using namespace std;
-
-class Vehiculo
-{
-    float manejo, frenado, offroad, valor, salida, aceleracion, velocidad, peso;
-    int modelo, potencia, torque;
-    string tipo;
-    Marca *marca;
-    Llanta *llantas;
-
-public:
-    Vehiculo(float manejo, float frenado, float offroad, float valor, float salida, float aceleracion, float velocidad, float peso, int modelo, int potencia, int torque, string tipo, Marca *marca, Llanta *llantas)
-    {
-        manejo, frenado, offroad, valor, salida, aceleracion, velocidad, peso
-    }
-};
-
-class Marca
-{
-};
-
-class Llanta
-{
-};
 
 int main()
 {
