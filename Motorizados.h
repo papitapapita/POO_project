@@ -5,7 +5,12 @@
 #ifndef POO_PROJECT_MOTORIZADOS_H
 #define POO_PROJECT_MOTORIZADOS_H
 
+#include "engine.h"
 #include "vehiculo.h"
+
+#include "PlataformaManejo.h"
+#include "Transmision.h"
+
 using namespace std;
 
 class Motorizados : public Vehiculo
@@ -17,11 +22,11 @@ class Motorizados : public Vehiculo
 public:
     Motorizados() : Vehiculo()
     {
-        motor = new Motor();
+        // motor = new Motor();
         plataformaManejo = {};
         transmision = {};
     }
-    Motorizados(Motor *motor, PlataformaManejo *plataformaManejo, Transmision *transmision)
+    Motorizados(PlataformaManejo *plataformaManejo, Transmision *transmision)
     {
     }
     Motor *getMotor()
@@ -54,4 +59,4 @@ public:
     }
     virtual string TipoVehiculo() = 0;
 };
-#endif //POO_PROJECT_MOTORIZADOS_H
+#endif // POO_PROJECT_MOTORIZADOS_H
