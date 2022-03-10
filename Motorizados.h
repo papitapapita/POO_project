@@ -22,11 +22,11 @@ class Motorizados : public Vehiculo
 public:
     Motorizados() : Vehiculo()
     {
-        // motor = new Motor();
+        motor = new Motor();
         plataformaManejo = {};
         transmision = {};
     }
-    Motorizados(PlataformaManejo *plataformaManejo, Transmision *transmision)
+    Motorizados(Motor *motor, PlataformaManejo *plataformaManejo, Transmision *transmision)
     {
     }
     Motor *getMotor()
