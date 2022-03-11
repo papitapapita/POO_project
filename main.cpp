@@ -1,5 +1,15 @@
 #include <iostream>
 #include "vector"
+#include "asesor.h"
+#include "comprador.h"
+#include "cuenta.h"
+#include "documento.h"
+#include "fecha.h"
+#include "nombre.h"
+#include "persona.h"
+#include "tipocliente.h"
+#include "vendedor.h"
+#include "venta.h"
 #include "vehiculo.h"
 #include "Llanta.h"
 #include "rin.h"
@@ -105,7 +115,7 @@ int main()
                     for (Llanta *llantas : llanta)
                     {
                         i++;
-                        cout << i << ". " << llantas->getNombre() << endl;
+                        cout << i << ". " << llantas->getTipo() << endl;
                     }
                     cin >> op;
                     cout << llanta[op - 1];
@@ -116,7 +126,7 @@ int main()
                     for (Llanta *llantas : llanta)
                     {
                         i++;
-                        cout << i << ". " << llantas->getNombre() << endl;
+                        cout << i << ". " << llantas->getTipo() << endl;
                     }
                     cin >> op;
                     *llanta[op - 1] = Llanta();

@@ -2,50 +2,59 @@
 // Created by cras9 on 9/03/2022.
 //
 
-#ifndef UNTITLED_FECHA_H
-#define UNTITLED_FECHA_H
+#ifndef POO_PROJECT_FECHA_H
+#define POO_PROJECT_FECHA_H
 
-class Fecha{
+class Fecha
+{
     int dia, mes, año;
 
 public:
-    Fecha(){
+    Fecha()
+    {
         dia = mes = año = 0;
     }
-    Fecha(int dia, int mes, int año) {
+    Fecha(int dia, int mes, int año)
+    {
 
         this->dia = dia;
         this->mes = mes;
         this->año = año;
     }
 
-    void print(){
+    void print()
+    {
         cout << getDia() << "/" << getMes() << "/" << getAño();
     }
 
-    int getDia(){
+    int getDia()
+    {
         return dia;
     }
 
-    void setDia(int dia) {
+    void setDia(int dia)
+    {
         this->dia = dia;
     }
 
-    int getMes(){
+    int getMes()
+    {
         return mes;
     }
 
-    void setMes(int mes) {
+    void setMes(int mes)
+    {
         this->mes = mes;
     }
 
-    int getAño(){
+    int getAño()
+    {
         return año;
     }
 
-    void setAño(int año) {
+    void setAño(int año)
+    {
         this->año = año;
     }
-
 };
-#endif //UNTITLED_FECHA_H
+#endif // POO_PROJECT_FECHA_H

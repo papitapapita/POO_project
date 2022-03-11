@@ -48,5 +48,10 @@ public:
     {
         this->trazado_llanta = trazado_llanta;
     }
+    friend ostream &operator<<(ostream &out, Llanta *llanta)
+    {
+        out << "Tipo: " << llanta->tipo << endl
+            << "Trazado de Llanta: " << llanta->trazado_llanta << endl;
+    }
 };
 #endif // POO_PROJECT_LLANTA_H
