@@ -7,7 +7,6 @@
 
 #include "engine.h"
 #include "vehiculo.h"
-
 #include "PlataformaManejo.h"
 #include "Transmision.h"
 
