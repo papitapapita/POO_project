@@ -1,9 +1,7 @@
-//
-// Created by klmxl on 9/03/2022.
-//
 
-#ifndef POO_PROJECT_MOTOR_H
-#define POO_PROJECT_MOTOR_H
+#ifndef POO_PROJECT_ENGINE_H
+#define POO_PROJECT_ENGINE_H
+
 using namespace std;
 
 class Motor
@@ -118,4 +116,4 @@ public:
         this->aceite = aceite;
     }
 };
-#endif //POO_PROJECT_MOTOR_H
+#endif // POO_PROJECT_MOTOR_H

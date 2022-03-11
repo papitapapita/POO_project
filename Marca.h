@@ -46,5 +46,22 @@ public:
     {
         this->anio_fundacion = anio_fundacion;
     }
+    friend ostream &operator<<(ostream &out, Marca *marca)
+    {
+        out << "Nombre: " << marca->nombre << endl
+            << "País: " << marca->pais << endl
+            << "Año Fundación: " << marca->anio_fundacion << endl;
+        return out;
+    }
+    friend istream &operator>>(istream &in, Marca *marca)
+    {
+        cout << "Nombre: ";
+        in >> marca->nombre;
+        cout << "País: ";
+        in >> marca->pais;
+        cout << "Año Fundación: ";
+        in >> marca->anio_fundacion;
+        return in;
+    }
 };
-#endif //POO_PROJECT_MOTOR_H
+#endif // POO_PROJECT_MOTOR_H

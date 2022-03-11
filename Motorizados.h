@@ -5,7 +5,11 @@
 #ifndef POO_PROJECT_MOTORIZADOS_H
 #define POO_PROJECT_MOTORIZADOS_H
 
+#include "engine.h"
 #include "vehiculo.h"
+#include "PlataformaManejo.h"
+#include "Transmision.h"
+
 using namespace std;
 
 class Motorizados : public Vehiculo
@@ -54,4 +58,4 @@ public:
     }
     virtual string TipoVehiculo() = 0;
 };
-#endif //POO_PROJECT_MOTORIZADOS_H
+#endif // POO_PROJECT_MOTORIZADOS_H
