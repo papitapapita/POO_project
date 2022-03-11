@@ -4,26 +4,27 @@
 
 #ifndef POO_PROJECT_LLANTA_H
 #define POO_PROJECT_LLANTA_H
+#include "rin.h"
 using namespace std;
 
 class Llanta
 {
-    string rin, trazado_llanta;
-    float diametro_rin;
+    Rin *rin;
+    string tipo, trazado_llanta;
 
 public:
     Llanta()
     {
-        rin = trazado_llanta = "";
-        diametro_rin = 0;
+        trazado_llanta = tipo = "";
+        *rin = Rin();
     }
-    Llanta(string rin, string trazado_llanta, float diametro_rin)
+    Llanta(string trazado_llanta, string tipo, Rin *rin)
     {
-        this->rin = rin;
         this->trazado_llanta = trazado_llanta;
-        this->diametro_rin = diametro_rin;
+        this->tipo = tipo;
+        this->rin = rin;
     }
-    string getRin()
+    Rin *getRin()
     {
         return rin;
     }
@@ -31,11 +32,15 @@ public:
     {
         return trazado_llanta;
     }
-    float getDiametroRin()
+    string getTipo()
     {
-        return diametro_rin;
+        return tipo;
     }
-    void setRin(string rin)
+    void setTipo(string tipo)
+    {
+        this->tipo = tipo;
+    }
+    void setRin(Rin *rin)
     {
         this->rin = rin;
     }
@@ -43,9 +48,5 @@ public:
     {
         this->trazado_llanta = trazado_llanta;
     }
-    void setDiametroRin(float diametro_rin)
-    {
-        this->diametro_rin = diametro_rin;
-    }
 };
-#endif //POO_PROJECT_LLANTA_H
+#endif // POO_PROJECT_LLANTA_H

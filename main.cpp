@@ -2,6 +2,7 @@
 #include "vector"
 #include "vehiculo.h"
 #include "Llanta.h"
+#include "rin.h"
 #include "engine.h"
 #include "Motorizados.h"
 #include "Marca.h"
@@ -73,16 +74,60 @@ int main()
                         cout << i << ". " << marcas->getNombre() << endl;
                     }
                     cin >> op;
-                    marca[op - 1] = Marca();
+                    *marca[op - 1] = Marca();
                     break;
                 case 4:
-                    rep = 0;
+                    rep2 = 0;
                 default:
                     break;
                 }
             } while (rep2 == 1);
 
             break;
+        case 2:
+            do
+            {
+                cout << "1. Crear Llantas\n"
+                     << "2. Mostrar Tipos Llantas\n"
+                     << "3. Borrar Llantas\n"
+                     << "4. Regresar\n"
+                     << ">> ";
+                cin >> op2;
+                switch (op2)
+                {
+                case 1:
+                    llanta.push_back(new Llanta());
+                    cin >> llanta.back();
+                    break;
+                case 2:
+                    op = 0;
+                    i = 0;
+                    for (Llanta *llantas : llanta)
+                    {
+                        i++;
+                        cout << i << ". " << llantas->getNombre() << endl;
+                    }
+                    cin >> op;
+                    cout << llanta[op - 1];
+                    break;
+                case 3:
+                    op = 0;
+                    i = 0;
+                    for (Llanta *llantas : llanta)
+                    {
+                        i++;
+                        cout << i << ". " << llantas->getNombre() << endl;
+                    }
+                    cin >> op;
+                    *llanta[op - 1] = Llanta();
+                    break;
+                case 4:
+                    rep2 = 0;
+                default:
+                    break;
+                }
+            } while (rep2 == 1);
+
         case 9:
             rep = 0;
             break;
