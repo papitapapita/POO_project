@@ -16,7 +16,6 @@ public:
     Llanta()
     {
         trazado_llanta = tipo = "";
-        *rin = Rin();
     }
     Llanta(string trazado_llanta, string tipo, Rin *rin)
     {
@@ -52,6 +51,15 @@ public:
     {
         out << "Tipo: " << llanta->tipo << endl
             << "Trazado de Llanta: " << llanta->trazado_llanta << endl;
+        return out;
+    }
+    friend istream &operator>>(istream &in, Llanta *llanta)
+    {
+        cout << "Tipo: ";
+        in >> llanta->tipo;
+        cout << "Trazado de Llanta: ";
+        in >> llanta->trazado_llanta;
+        return in;
     }
 };
-#endif // POO_PROJECT_LLANTA_H
+#endif

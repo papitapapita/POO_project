@@ -1,15 +1,15 @@
 #include <iostream>
 #include "vector"
-#include "asesor.h"
+#include "persona.h"
+#include "venta.h"
+#include "consultor.h"
+#include "fecha.h"
 #include "comprador.h"
 #include "cuenta.h"
 #include "documento.h"
-#include "fecha.h"
 #include "nombre.h"
-#include "persona.h"
 #include "tipocliente.h"
 #include "vendedor.h"
-#include "venta.h"
 #include "vehiculo.h"
 #include "Llanta.h"
 #include "rin.h"
@@ -34,9 +34,9 @@ using namespace std;
 int main()
 {
     int op, op2, rep, rep2, i;
+    vector<Llanta *> llanta;
     vector<Motor *> motor;
     vector<Vehiculo *> vehiculo;
-    vector<Llanta *> llanta;
     vector<Marca *> marca;
     vector<Bicicleta *> bicicleta;
     vector<Carro *> carro;
@@ -44,6 +44,8 @@ int main()
     do
     {
         cout << "1. Marcas\n"
+             << "2. Llantas\n"
+             << "9. Salir\n"
              << ">> ";
         cin >> op;
 
@@ -95,6 +97,7 @@ int main()
 
             break;
         case 2:
+            rep2 = 1;
             do
             {
                 cout << "1. Crear Llantas\n"
