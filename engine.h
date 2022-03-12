@@ -1,9 +1,6 @@
-//
-// Created by klmxl on 9/03/2022.
-//
+#ifndef POO_PROJECT_ENGINE_H
+#define POO_PROJECT_ENGINE_H
 
-#ifndef POO_PROJECT_MOTOR_H
-#define POO_PROJECT_MOTOR_H
 using namespace std;
 
 class Motor
@@ -117,5 +114,46 @@ public:
     {
         this->aceite = aceite;
     }
+    friend ostream &operator<<(ostream &out, Motor *motor)
+    {
+        out << "Admision: " << motor->admision << endl
+            << "cilindrada: " << motor->cilindrada << endl
+            << "Inyeccion: " << motor->inyeccion << endl
+            << "Encendido: " << motor->encendido << endl
+            << "Escape: " << motor->escape << endl
+            << "arbol_levas: " << motor->arbol_levas << endl
+            << "valvulas: " << motor->valvulas << endl
+            << "pistones: " << motor->pistones << endl
+            << "turbo: " << motor->turbo << endl
+            << "intercooler: " << motor->intercooler << endl
+            << "aceite: " << motor->aceite << endl;
+        return out;
+    }
+    friend istream &operator>>(istream &in, Motor *motor)
+    {
+        cout << "Admision: ";
+        in >> motor->admision;
+        cout << "cilindrada: ";
+        in >> motor->cilindrada;
+        cout << "Inyeccion: ";
+        in >> motor->inyeccion;
+        cout << "Encendido: ";
+        in >> motor->encendido;
+        cout << "Escape: ";
+        in >> motor->escape;
+        cout << "arbol_levas: ";
+        in >> motor->arbol_levas;
+        cout << "valvulas: ";
+        in >> motor->valvulas;
+        cout << "pistones: ";
+        in >> motor->pistones;
+        cout << "turbo: ";
+        in >> motor->turbo;
+        cout << "intercooler: ";
+        in >> motor->intercooler;
+        cout << "aceite: ";
+        in >> motor->aceite;
+        return in;
+    }
 };
-#endif //POO_PROJECT_MOTOR_H
+#endif // POO_PROJECT_MOTOR_H
