@@ -53,5 +53,20 @@ public:
         out << "Tipo: " << llanta->tipo << endl
             << "Trazado de Llanta: " << llanta->trazado_llanta << endl;
     }
+    friend istream &operator >>(istream &in, Llanta *llanta){
+        cout<<"Rin: ";
+        in>>llanta->rin;
+        cout<<"Diametro del rin: ";
+        in>>llanta->tipo;
+        cout<<"Trazado de la llanta: ";
+        in>>llanta->trazado_llanta;
+        return in;
+    }
 };
+<<<<<<< Updated upstream
 #endif // POO_PROJECT_LLANTA_H
+=======
+
+
+#endif //POO_PROJECT_LLANTA_H
+>>>>>>> Stashed changes
