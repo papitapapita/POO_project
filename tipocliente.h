@@ -14,6 +14,8 @@ using namespace std;
 class Tipocliente : public Persona
 {
 public:
+    Tipocliente(): Persona(){};
+
     Tipocliente(string nombre, string apellido, int numDocumento, string tipoDocumento, string nacionalidad,
                 int dia, int mes, int anio)
         : Persona(nombre, apellido, numDocumento, tipoDocumento, nacionalidad, dia, mes, anio) {}

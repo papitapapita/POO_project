@@ -19,6 +19,12 @@ protected:
     Documento *documento;
 
 public:
+    Persona(){
+        nombre = Nombre::Nombre();
+        fechaNacimiento = Fecha::Fecha();
+        documento = Documento::Documento();
+    }
+
     Persona(string nombre, string apellido, int numDocumento, string tipoDocumento, string nacionalidad, int dia, int mes, int anio)
     {
         this->nombre = new Nombre(nombre, apellido);

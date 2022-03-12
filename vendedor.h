@@ -4,6 +4,9 @@
 
 #ifndef POO_PROJECT_VENDEDOR_H
 #define POO_PROJECT_VENDEDOR_H
+#include "tipocliente.h"
+#include "cuenta.h"
+
 using namespace std;
 
 class Vendedor : public Tipocliente
@@ -11,6 +14,10 @@ class Vendedor : public Tipocliente
     Cuenta *cuenta;
 
 public:
+    Vendedor():Tipocliente(){
+        cuenta = Cuenta::Cuenta()
+    }
+
     Vendedor(string nombre, string apellido, int numDocumento, string tipoDocumento, string nacionalidad, int dia,
              int mes, int anio, int numCuenta, float saldo, string banco) : Tipocliente(nombre, apellido, numDocumento,
                                                                                         tipoDocumento, nacionalidad, dia, mes, anio)
