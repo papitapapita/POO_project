@@ -158,6 +158,7 @@ public:
         in>>motor->intercooler;
         cout<<"aceite: ";
         in>>motor->aceite;
+        return in;
     }
 };
 #endif // POO_PROJECT_MOTOR_H
