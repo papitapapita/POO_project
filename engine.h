@@ -5,15 +5,16 @@ using namespace std;
 
 class Motor
 {
-    string admision, inyeccion, encendido, escape, arbol_levas, valvulas, cilindrada, pistones, turbo, intercooler, aceite;
+    string admision, inyeccion, encendido, escape, arbol_levas, valvulas, cilindrada, pistones, turbo, intercooler, aceite, nombre;
 
 public:
     Motor()
     {
-        admision = inyeccion = encendido = escape = arbol_levas = valvulas = cilindrada = pistones = turbo = intercooler = aceite = "";
+        admision = inyeccion = encendido = escape = arbol_levas = valvulas = cilindrada = pistones = turbo = intercooler = aceite = nombre = "";
     }
-    Motor(string admision, string inyeccion, string encendido, string escape, string arbol_levas, string valvulas, string cilindrada, string pistones, string turbo, string intercooler, string aceite)
+    Motor(string admision, string inyeccion, string encendido, string escape, string arbol_levas, string valvulas, string cilindrada, string pistones, string turbo, string intercooler, string aceite, string nombre)
     {
+        this->nombre = nombre;
         this->admision = admision;
         this->inyeccion = inyeccion;
         this->encendido = encendido;
@@ -25,6 +26,10 @@ public:
         this->turbo = turbo;
         this->intercooler = intercooler;
         this->aceite = aceite;
+    }
+    string getNombre()
+    {
+        return nombre;
     }
     string getAdmision()
     {
@@ -69,6 +74,10 @@ public:
     string getAceite()
     {
         return aceite;
+    }
+    void setNombre(string nombre)
+    {
+        this->nombre = nombre;
     }
     void setAdmision(string admision)
     {
@@ -116,7 +125,8 @@ public:
     }
     friend ostream &operator<<(ostream &out, Motor *motor)
     {
-        out << "Admision: " << motor->admision << endl
+        out << "Nombre: " << motor->nombre << endl
+            << "Admision: " << motor->admision << endl
             << "cilindrada: " << motor->cilindrada << endl
             << "Inyeccion: " << motor->inyeccion << endl
             << "Encendido: " << motor->encendido << endl
@@ -131,6 +141,8 @@ public:
     }
     friend istream &operator>>(istream &in, Motor *motor)
     {
+        cout << "Nombre: ";
+        in >> motor->nombre;
         cout << "Admision: ";
         in >> motor->admision;
         cout << "cilindrada: ";
