@@ -14,9 +14,8 @@ class Vendedor : public Tipocliente
     Cuenta *cuenta;
 
 public:
-    Vendedor():Tipocliente(){
-        cuenta = Cuenta::Cuenta()
-    }
+
+    Vendedor():Tipocliente() {}
 
     Vendedor(string nombre, string apellido, int numDocumento, string tipoDocumento, string nacionalidad, int dia,
              int mes, int anio, int numCuenta, float saldo, string banco) : Tipocliente(nombre, apellido, numDocumento,

@@ -19,11 +19,7 @@ protected:
     Documento *documento;
 
 public:
-    Persona(){
-        nombre = Nombre::Nombre();
-        fechaNacimiento = Fecha::Fecha();
-        documento = Documento::Documento();
-    }
+    Persona() {}
 
     Persona(string nombre, string apellido, int numDocumento, string tipoDocumento, string nacionalidad, int dia, int mes, int anio)
     {

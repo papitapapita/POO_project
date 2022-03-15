@@ -17,7 +17,6 @@ class Comprador : public Tipocliente
 
 public:
     Comprador(): Tipocliente(){
-        cuenta = Cuenta::Cuenta();
     }
     Comprador(string nombre, string apellido, int numDocumento, string tipoDocumento, string nacionalidad, int dia,
               int mes, int anio, int numCuenta, float saldo, string banco) : Tipocliente(nombre, apellido, numDocumento,
