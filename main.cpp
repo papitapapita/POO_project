@@ -33,7 +33,7 @@ using namespace std;
 
 int main()
 {
-    int op, op2, rep, rep2, i;
+    int op, op2, op3, op4, rep, rep2, rep3, rep4, i;
     vector<Llanta *> llanta;
     vector<Rin *> rin;
     vector<Motor *> motor;
@@ -46,6 +46,7 @@ int main()
     {
         cout << "1. Marcas\n"
              << "2. Llantas\n"
+             << "3. Vehiculos\n"
              << "9. Salir\n"
              << ">> ";
         cin >> op;
@@ -121,7 +122,6 @@ int main()
                         i++;
                         cout << "\t" << i << ". " << rines->getRin() << endl;
                     }
-                    cout << "\t>> ";
                     cin >> op;
                     if (op == 1)
                     {
@@ -162,6 +162,128 @@ int main()
                     break;
                 }
             } while (rep2 == 1);
+            break;
+        case 3:
+            rep2 = 1;
+            do
+            {
+                cout << "1. Motorizado\n"
+                     << "2. No Motorizado\n"
+                     << "3. Regresar\n"
+                     << ">> ";
+                cin >> op2;
+                switch (op2)
+                {
+                case 1:
+                    rep3 = 1;
+                    do
+                    {
+
+                        cout << "1. Partes del Vehiculo\n"
+                             << "2. Tipos de vehiculos\n"
+                             << "3. Regresar\n"
+                             << ">> ";
+                        cin >> op3;
+                        switch (op3)
+                        {
+                        case 1:
+                            rep4 = 1;
+                            do
+                            {
+
+                                cout << "1. Motor\n"
+                                     << "2. Plataforma y Manejo\n"
+                                     << "3. Transmision\n"
+                                     << "4. Regresar\n"
+                                     << ">> ";
+                                cin >> op4;
+                                switch (op4)
+                                {
+                                case 1:
+                                    break;
+                                case 2:
+                                    break;
+                                case 3:
+                                    break;
+                                case 4:
+                                    rep4 = 0;
+                                    break;
+                                default:
+                                    break;
+                                }
+                            } while (rep4 == 1);
+                            break;
+                        case 2:
+                            rep4 = 1;
+                            do
+                            {
+                                cout << "1. Carro\n"
+                                     << "2. Moto\n"
+                                     << "3. Camión\n"
+                                     << "4. Regresar\n"
+                                     << ">> ";
+                                cin >> op4;
+                                switch (op4)
+                                {
+                                case 1:
+                                    break;
+                                case 2:
+                                    break;
+                                case 3:
+                                    break;
+                                case 4:
+                                    rep4 = 0;
+                                    break;
+                                default:
+                                    break;
+                                }
+                            } while (rep4 == 1);
+
+                            break;
+                        case 3:
+                            rep3 = 0;
+                            break;
+                        default:
+                            break;
+                        }
+                    } while (rep3 == 1);
+                    break;
+
+                case 2:
+                    rep3 = 1;
+                    do
+                    {
+                        cout << "1. Patineta\n"
+                             << "2. Bicicleta\n"
+                             << "3. Scooter\n"
+                             << "4. Regresar\n"
+                             << ">> ";
+                        cin >> op3;
+                        switch (op3)
+                        {
+                        case 1:
+                            break;
+                        case 2:
+                            break;
+                        case 3:
+                            break;
+                        case 4:
+                            rep3 = 0;
+                            break;
+                        default:
+                            break;
+                        }
+                    } while (rep3 == 1);
+
+                    break;
+                case 3:
+                    rep2 = 0;
+                    break;
+                default:
+                    break;
+                }
+            } while (rep2 == 1);
+
             break;
         case 9:
             rep = 0;
