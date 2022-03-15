@@ -52,6 +52,7 @@ public:
 
     virtual string TipoPlataformaManejo() = 0;
     virtual void print(ostream &out);
+    virtual void set(istream &in);
     friend ostream &operator<<(ostream &out, PlataformaManejo *plataformaManejo)
     {
         out << "Frenos: " << plataformaManejo->frenos << endl
@@ -59,6 +60,17 @@ public:
             << "Reducción de Peso: " << plataformaManejo->reduccionPeso << endl;
         plataformaManejo->print(out);
         return (out);
+    }
+    friend istream &operator>>(istream &in, PlataformaManejo *plataformaManejo)
+    {
+        cout << "Frenos: ";
+        in >> plataformaManejo->frenos;
+        cout << "kit Amortiguadores: ";
+        in >> plataformaManejo->kitAmortiguadores;
+        cout << "reduccion Peso: ";
+        in >> plataformaManejo->reduccionPeso;
+        plataformaManejo->set(in);
+        return in;
     }
 };
 

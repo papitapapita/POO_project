@@ -8,7 +8,6 @@
 #include "PlataformaManejo.h"
 using namespace std;
 
-
 class PlataformaManejoCarro : public PlataformaManejo
 {
     string barraEstabilizadora, refuerzoChasis, jaulaAntivuelco;
@@ -52,24 +51,20 @@ public:
     {
         return "Carro";
     }
-    friend istream &operator >>(istream &in, PlataformaManejoCarro *plataformaManejoCarro){
-        cout<<"barra Estabilizadora: ";
-        in>>plataformaManejoCarro->barraEstabilizadora;
-        cout<<"Refuerzo Chasis: ";
-        in>>plataformaManejoCarro->refuerzoChasis;
-        cout<<"Jaula Antivuelco: ";
-        in>>plataformaManejoCarro->jaulaAntivuelco;
-        string frenos, kitAmortiguadores, reduccionPeso;
-        cout<<"Frenos: ";
-        in>>frenos;
-        plataformaManejoCarro->setFrenos(frenos);
-        cout<<"kit Amortiguadores: ";
-        in>>kitAmortiguadores;
-        plataformaManejoCarro->setKitAmortiguadores(kitAmortiguadores);
-        cout<<"reduccion Peso: ";
-        in>>reduccionPeso;
-        plataformaManejoCarro->setReduccionPeso(reduccionPeso);
-        return in;
+    void print(ostream &out) override
+    {
+        out << "Barra Estabilizadora: " << barraEstabilizadora << endl
+            << "Refuerzo Chasis: " << refuerzoChasis << endl
+            << "Jaula Antivuelco: " << jaulaAntivuelco << endl;
+    }
+    void set(istream &in) override
+    {
+        cout << "barra Estabilizadora: ";
+        in >> barraEstabilizadora;
+        cout << "Refuerzo Chasis: ";
+        in >> refuerzoChasis;
+        cout << "Jaula Antivuelco: ";
+        in >> jaulaAntivuelco;
     }
 };
-#endif //POO_PROJECT_PLATAFORMAMANEJOCARRO_H
+#endif // POO_PROJECT_PLATAFORMAMANEJOCARRO_H
