@@ -19,6 +19,8 @@ protected:
     Documento *documento;
 
 public:
+    Persona() {}
+
     Persona(string nombre, string apellido, int numDocumento, string tipoDocumento, string nacionalidad, int dia, int mes, int anio)
     {
         this->nombre = new Nombre(nombre, apellido);

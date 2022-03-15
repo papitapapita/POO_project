@@ -3,6 +3,7 @@
 #include "fecha.h"
 #include "consultor.h"
 #include "comprador.h"
+#include "vehiculo.h"
 
 using namespace std;
 
@@ -10,17 +11,15 @@ class Venta
 {
     Consultor *asesor;
     Fecha *fechaVenta;
-    // Vehiculo *vehiculo;
+    Vehiculo *vehiculo;
     Comprador *comprador;
 
 public:
     Venta(int dia, int mes, int anio, string nombre, string apellido, int numDocumento, string tipoDocumento, string nacionalidad, int dia1,
-          int mes1, int anio1, int numCuenta, float saldo, string banco)
+          int mes1, int anio1)
     {
         fechaVenta = new Fecha(dia, mes, anio);
-        comprador = new Comprador(nombre, apellido, numDocumento,
-                                  tipoDocumento, nacionalidad,
-                                  dia1, mes1, anio1, numCuenta, saldo, banco);
+        asesor = new Consultor(nombre, apellido, numDocumento, tipoDocumento, nacionalidad, dia1, mes1, anio1);
     }
 
     float valorVenta()
@@ -30,10 +29,8 @@ public:
 
     void print()
     {
-        cout << "Datos del comprador: ";
-        comprador->print();
         cout << "Datos del asesor: ";
-
+        asesor->print();
         fechaVenta->print();
     }
 
@@ -47,13 +44,15 @@ public:
         this->fechaVenta = fechaVenta;
     }
 
-    // Vehiculo *getVehiculo() const {
-    //     return vehiculo;
-    //  }
+    Vehiculo *getVehiculo() const
+    {
+        return vehiculo;
+    }
 
-    //  void setVehiculo(Vehiculo *vehiculo) {
-    //    this->vehiculo = vehiculo;
-    //}
+    void setVehiculo(Vehiculo *vehiculo)
+    {
+        this->vehiculo = vehiculo;
+    }
 
     Comprador *getComprador()
     {

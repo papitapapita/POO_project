@@ -16,11 +16,12 @@ class Comprador : public Tipocliente
     Cuenta *cuenta;
 
 public:
+    Comprador(): Tipocliente(){
+    }
     Comprador(string nombre, string apellido, int numDocumento, string tipoDocumento, string nacionalidad, int dia,
               int mes, int anio, int numCuenta, float saldo, string banco) : Tipocliente(nombre, apellido, numDocumento,
                                                                                          tipoDocumento, nacionalidad, dia, mes, anio)
     {
-
         cuenta = new Cuenta(numCuenta, saldo, banco);
     }
 

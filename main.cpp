@@ -121,7 +121,7 @@ int main()
                         i++;
                         cout << "\t" << i << ". " << rines->getRin() << endl;
                     }
-                    cout << ">> ";
+                    cout << "\t>> ";
                     cin >> op;
                     if (op == 1)
                     {
@@ -162,7 +162,7 @@ int main()
                     break;
                 }
             } while (rep2 == 1);
-
+            break;
         case 9:
             rep = 0;
             break;

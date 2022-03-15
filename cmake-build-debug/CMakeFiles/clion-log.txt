@@ -1,13 +1,6 @@
-"C:\Program Files\JetBrains\CLion 2021.3.3\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" C:\Users\klmxl\OneDrive\Documentos\GitHub\POO_project
--- Configuring done
-CMake Error at CMakeLists.txt:8 (add_executable):
-  Cannot find source file:
-
-    Directorio/asesor.h
+"C:\Program Files\JetBrains\CLion 2021.2.3\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -DCMAKE_DEPENDS_USE_COMPILER=FALSE -G "CodeBlocks - MinGW Makefiles" C:\Users\cras9\POO_project
+CMake Error at CMakeLists.txt:1 (cmake_minimum_required):
+  CMake 3.21 or higher is required.  You are running version 3.20.2
 
 
-CMake Error at CMakeLists.txt:8 (add_executable):
-  No SOURCES given to target: POO_project
-
-
-CMake Generate step failed.  Build files cannot be regenerated correctly.
+-- Configuring incomplete, errors occurred!

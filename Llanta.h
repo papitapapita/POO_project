@@ -51,7 +51,7 @@ public:
     {
         out << "Tipo: " << llanta->tipo << endl
             << "Trazado de Llanta: " << llanta->trazado_llanta << endl
-            << "Rin: " << llanta->rin->getRin();
+            << "Rin: " << llanta->rin->getRin() << endl;
         return out;
     }
     friend istream &operator>>(istream &in, Llanta *llanta)
