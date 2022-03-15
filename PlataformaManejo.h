@@ -51,6 +51,15 @@ public:
     }
 
     virtual string TipoPlataformaManejo() = 0;
+    virtual void print(ostream &out);
+    friend ostream &operator<<(ostream &out, PlataformaManejo *plataformaManejo)
+    {
+        out << "Frenos: " << plataformaManejo->frenos << endl
+            << "Kit Amortiguadores: " << plataformaManejo->kitAmortiguadores << endl
+            << "Reducción de Peso: " << plataformaManejo->reduccionPeso << endl;
+        plataformaManejo->print(out);
+        return (out);
+    }
 };
 
-#endif //POO_PROJECT_PLATAFORMAMANEJO_H
+#endif // POO_PROJECT_PLATAFORMAMANEJO_H
