@@ -9,18 +9,19 @@ using namespace std;
 
 class PlataformaManejo
 {
-    string frenos, kitAmortiguadores, reduccionPeso;
+    string frenos, kitAmortiguadores, reduccionPeso, nombre;
 
 public:
     PlataformaManejo()
     {
-        frenos = kitAmortiguadores = reduccionPeso = "";
+        frenos = kitAmortiguadores = reduccionPeso = nombre = "";
     }
-    PlataformaManejo(string frenos, string kitAmortiguadores, string reduccionPeso)
+    PlataformaManejo(string frenos, string kitAmortiguadores, string reduccionPeso, string nombre)
     {
         this->frenos = frenos;
         this->kitAmortiguadores = kitAmortiguadores;
         this->reduccionPeso = reduccionPeso;
+        this->nombre = nombre;
     }
     string getFrenos()
     {
@@ -35,7 +36,10 @@ public:
     {
         return reduccionPeso;
     }
-
+    string getNombre()
+    {
+        return nombre;
+    }
     void setFrenos(string frenos)
     {
         this->frenos = frenos;
@@ -49,13 +53,17 @@ public:
     {
         this->reduccionPeso = reduccionPeso;
     }
-
+    void setNombre(string nombre)
+    {
+        this->nombre = nombre;
+    }
     virtual string TipoPlataformaManejo() = 0;
-    virtual void print(ostream &out);
-    virtual void set(istream &in);
+    virtual void print(ostream &out) = 0;
+    virtual void set(istream &in) = 0;
     friend ostream &operator<<(ostream &out, PlataformaManejo *plataformaManejo)
     {
-        out << "Frenos: " << plataformaManejo->frenos << endl
+        out << "Nombre: " << plataformaManejo->nombre << endl
+            << "Frenos: " << plataformaManejo->frenos << endl
             << "Kit Amortiguadores: " << plataformaManejo->kitAmortiguadores << endl
             << "Reducción de Peso: " << plataformaManejo->reduccionPeso << endl;
         plataformaManejo->print(out);
@@ -63,6 +71,8 @@ public:
     }
     friend istream &operator>>(istream &in, PlataformaManejo *plataformaManejo)
     {
+        cout << "Nombre: ";
+        in >> plataformaManejo->nombre;
         cout << "Frenos: ";
         in >> plataformaManejo->frenos;
         cout << "kit Amortiguadores: ";

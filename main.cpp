@@ -44,6 +44,7 @@ int main()
     int op[6];
     int rep[6];
     int i = 1;
+    string result;
     rep[0] = 1;
     do
     {
@@ -288,13 +289,17 @@ int main()
                                                             break;
                                                         case 2:
                                                             i = 0;
-                                                            for (Motor *motores : motor)
+                                                            for (PlataformaManejo *plataformas : plataformaManejo)
                                                             {
                                                                 i++;
-                                                                cout << i << ". " << motores->getNombre() << endl;
+                                                                result = plataformas->TipoPlataformaManejo();
+                                                                if (result == "Carro")
+                                                                {
+                                                                    cout << i << ". " << plataformas->getNombre() << endl;
+                                                                }
                                                             }
                                                             cin >> op[1];
-                                                            cout << motor[op[1] - 1];
+                                                            cout << plataformaManejo[op[1] - 1];
                                                             break;
                                                         case 3:
                                                             op[1] = 0;
@@ -313,7 +318,7 @@ int main()
                                                         default:
                                                             break;
                                                         }
-                                                    } while (rep[6] == 1);
+                                                    } while (rep[5] == 1);
 
                                                     break;
                                                 case 2:

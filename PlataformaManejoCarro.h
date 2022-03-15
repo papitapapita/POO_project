@@ -17,7 +17,7 @@ public:
     {
         barraEstabilizadora = refuerzoChasis = jaulaAntivuelco = "";
     }
-    PlataformaManejoCarro(string frenos, string kitAmortiguadores, string reduccionPeso, string barraEstabilizadora, string refuerzoChasis, string jaulaAntivuelco) : PlataformaManejo(frenos, kitAmortiguadores, reduccionPeso)
+    PlataformaManejoCarro(string frenos, string kitAmortiguadores, string reduccionPeso, string nombre, string barraEstabilizadora, string refuerzoChasis, string jaulaAntivuelco) : PlataformaManejo(frenos, kitAmortiguadores, reduccionPeso, nombre)
     {
         this->barraEstabilizadora = barraEstabilizadora;
         this->refuerzoChasis = refuerzoChasis;

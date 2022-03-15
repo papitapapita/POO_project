@@ -13,7 +13,7 @@ public:
     PlataformaManejoMoto() : PlataformaManejo()
     {
     }
-    PlataformaManejoMoto(string frenos, string kitAmortiguadores, string reduccionPeso) : PlataformaManejo(frenos, kitAmortiguadores, reduccionPeso)
+    PlataformaManejoMoto(string frenos, string kitAmortiguadores, string reduccionPeso, string nombre) : PlataformaManejo(frenos, kitAmortiguadores, reduccionPeso, nombre)
     {
     }
     string TipoPlataformaManejo() override
