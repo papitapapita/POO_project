@@ -262,13 +262,39 @@ int main()
                                             rep[5] = 1;
                                             do
                                             {
+                                                cout << "1. Plataforma y Manejo Carro\n"
+                                                     << "2. Plataforma y Manejo Moto\n"
+                                                     << "3. Plataforma y Manejo Camión\n"
+                                                     << "4. Regresar\n"
+                                                     << ">> ";
+                                                cin >> op[1];
+                                                switch (op[1])
+                                                {
+                                                case 1:
+
+                                                    break;
+                                                case 2:
+                                                    break;
+                                                case 3:
+                                                    break;
+                                                case 4:
+                                                    break;
+
+                                                default:
+                                                    break;
+                                                }
+                                            } while (rep[5] == 1);
+
+                                            rep[6] = 1;
+                                            do
+                                            {
                                                 cout << "1. Crear Plataforma y Manejo\n"
                                                      << "2. Ver Plataformas y Manejo\n"
                                                      << "3. Borrar Plataformas y Manejo\n"
                                                      << "4. Regresar\n"
                                                      << ">> ";
-                                                cin >> op[5];
-                                                switch (op[5])
+                                                cin >> op[6];
+                                                switch (op[6])
                                                 {
                                                 case 1:
                                                     plataformaManejo.push_back(new Motor());
@@ -301,7 +327,7 @@ int main()
                                                 default:
                                                     break;
                                                 }
-                                            } while (rep[5] == 1);
+                                            } while (rep[6] == 1);
                                             break;
                                         case 3:
                                             break;
