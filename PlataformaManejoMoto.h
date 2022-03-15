@@ -20,6 +20,19 @@ public:
     {
         return "Moto";
     }
+    friend istream &operator >>(istream &in, PlataformaManejoCarro *plataformaManejoCarro){
+        string frenos, kitAmortiguadores, reduccionPeso;
+        cout<<"Frenos: ";
+        in>>frenos;
+        plataformaManejoCarro->setFrenos(frenos);
+        cout<<"kit Amortiguadores: ";
+        in>>kitAmortiguadores;
+        plataformaManejoCarro->setKitAmortiguadores(kitAmortiguadores);
+        cout<<"reduccion Peso: ";
+        in>>reduccionPeso;
+        plataformaManejoCarro->setReduccionPeso(reduccionPeso);
+        return in;
+    }
 };
 
 #endif //POO_PROJECT_PLATAFORMAMANEJOMOTO_H

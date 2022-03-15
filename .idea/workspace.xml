@@ -14,10 +14,9 @@
   <component name="ChangeListManager">
     <list default="true" id="8c2c0003-6211-42a0-bcf0-96dc6822ce94" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Llanta.h" beforeDir="false" afterPath="$PROJECT_DIR$/Llanta.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/comprador.h" beforeDir="false" afterPath="$PROJECT_DIR$/comprador.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/persona.h" beforeDir="false" afterPath="$PROJECT_DIR$/persona.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendedor.h" beforeDir="false" afterPath="$PROJECT_DIR$/vendedor.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PlataformaManejoCarro.h" beforeDir="false" afterPath="$PROJECT_DIR$/PlataformaManejoCarro.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PlataformaManejoMoto.h" beforeDir="false" afterPath="$PROJECT_DIR$/PlataformaManejoMoto.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,11 +64,6 @@
         <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="All Tests" type="CTestRunConfiguration" factoryName="CTestRun" nameIsGenerated="true" PROGRAM_PARAMS="--extra-verbose" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" WORKING_DIR="file://$CMakeCurrentLocalGenerationDir$" PASS_PARENT_ENVS_2="true" CONFIG_NAME="Debug" RUN_PATH="$CTestCurrentExecutableName$" EXPLICIT_BUILD_TARGET_NAME="all" TEST_MODE="PATTERN">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -90,6 +84,9 @@
       <workItem from="1647045188530" duration="290000" />
       <workItem from="1647045502309" duration="3300000" />
       <workItem from="1647118418025" duration="3076000" />
+      <workItem from="1647316730265" duration="49000" />
+      <workItem from="1647317763692" duration="3000" />
+      <workItem from="1647358755734" duration="1024000" />
     </task>
     <servers />
   </component>
