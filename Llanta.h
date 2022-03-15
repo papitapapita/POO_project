@@ -50,7 +50,8 @@ public:
     friend ostream &operator<<(ostream &out, Llanta *llanta)
     {
         out << "Tipo: " << llanta->tipo << endl
-            << "Trazado de Llanta: " << llanta->trazado_llanta << endl;
+            << "Trazado de Llanta: " << llanta->trazado_llanta << endl
+            << "Rin: " << llanta->rin->getRin();
         return out;
     }
     friend istream &operator>>(istream &in, Llanta *llanta)
@@ -61,24 +62,5 @@ public:
         in >> llanta->trazado_llanta;
         return in;
     }
-    friend istream &operator >>(istream &in, Llanta *llanta){
-        cout<<"Rin: ";
-        in>>llanta->rin;
-        cout<<"Diametro del rin: ";
-        in>>llanta->tipo;
-        cout<<"Trazado de la llanta: ";
-        in>>llanta->trazado_llanta;
-        return in;
-    }
 };
-<<<<<<< HEAD
-#endif
-=======
-<<<<<<< Updated upstream
 #endif // POO_PROJECT_LLANTA_H
-=======
-
-
-#endif //POO_PROJECT_LLANTA_H
->>>>>>> Stashed changes
->>>>>>> 970c7c208eecfd90830ce14c0600d582504094ef

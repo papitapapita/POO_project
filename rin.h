@@ -35,6 +35,14 @@ public:
     {
         this->diametroRin = diametroRin;
     }
+    friend istream &operator>>(istream &in, Rin *rin)
+    {
+        cout << "Rin: ";
+        in >> rin->rin;
+        cout << "Diametro Rin: ";
+        in >> rin->diametroRin;
+        return in;
+    }
 };
 
 #endif

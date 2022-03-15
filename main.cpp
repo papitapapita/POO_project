@@ -35,6 +35,7 @@ int main()
 {
     int op, op2, rep, rep2, i;
     vector<Llanta *> llanta;
+    vector<Rin *> rin;
     vector<Motor *> motor;
     vector<Vehiculo *> vehiculo;
     vector<Marca *> marca;
@@ -109,8 +110,29 @@ int main()
                 switch (op2)
                 {
                 case 1:
+                    i = 1;
                     llanta.push_back(new Llanta());
                     cin >> llanta.back();
+
+                    cout << "SELECCIÓN DE RIN: \n"
+                         << "\t1. Crear nuevo rin " << endl;
+                    for (Rin *rines : rin)
+                    {
+                        i++;
+                        cout << "\t" << i << ". " << rines->getRin() << endl;
+                    }
+                    cout << ">> ";
+                    cin >> op;
+                    if (op == 1)
+                    {
+                        rin.push_back(new Rin());
+                        cin >> rin.back();
+                        llanta.back()->setRin(rin.back());
+                    }
+                    else
+                    {
+                        llanta.back()->setRin(rin[op - 1]);
+                    }
                     break;
                 case 2:
                     op = 0;
