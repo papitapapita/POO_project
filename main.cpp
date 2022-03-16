@@ -36,6 +36,7 @@ int main()
     vector<Llanta *> llanta;
     vector<Rin *> rin;
     vector<PlataformaManejo *> plataformaManejo;
+    vector<Transmision *> transmision;
     vector<Motor *> motor;
     vector<Vehiculo *> vehiculo;
     vector<Marca *> marca;
@@ -463,9 +464,74 @@ int main()
                                             } while (rep[5] == 1);
 
                                             break;
-                                        case 3:
-                                            break;
-                                        case 4:
+                                            case 3:
+                                                rep[4] = 1;
+                                                do{
+                                                    cout << "1. transmisión Carro\n"
+                                                     << "2. transmisión Moto\n"
+                                                     << "4. Regresar\n"
+                                                     << ">> ";
+                                                    cin >> op[1];
+                                                    switch (op[1]){
+                                                            case 1:
+                                                                rep[4] = 1;
+                                                                do{
+                                                                    cout << "1. Crear transmision"
+                                                                         << "2. Ver transmision\n"
+                                                                         << "3. Borrar transmision\n"
+                                                                         << "4. Regresar\n"
+                                                                         << ">> ";
+                                                                    cin >> op[6];
+                                                                    switch (op[6]) {
+                                                                        case 1:
+                                                                            transmision.push_back(new TransmisionCarro());
+                                                                            cin>>transmision.back();
+                                                                            break;
+                                                                        case 2:
+                                                                            op[1] = 0;
+                                                                            i = 0;
+                                                                            i2 = 0;
+                                                                            for  (Transmision *trans   : transmision)
+                                                                            {
+                                                                                result = trans->claseTransmision();
+                                                                                if (result == "Carro")
+                                                                                {
+                                                                                    temp[i] = i2;
+                                                                                    i++;
+                                                                                    cout << i << ". " << trans->getTipoTransmision() << endl;
+                                                                                }
+                                                                                i2++;
+                                                                            }
+                                                                            cin >> op[1];
+                                                                            cout << transmision[temp[op[1] - 1]];
+                                                                            break;
+                                                                        case 3:
+                                                                            op[1] = 0;
+                                                                            i = 0;
+                                                                            i2 = 0;
+                                                                            for (Transmision *trans   : transmision)
+                                                                            {
+                                                                                result = trans->claseTransmision();
+                                                                                if (result == "Carro")
+                                                                                {
+                                                                                    temp[i] = i2;
+                                                                                    i++;
+                                                                                    cout << i << ". " << trans->getTipoTransmision()<< endl;
+                                                                                }
+                                                                                i2++;
+                                                                            }
+                                                                            cin >> op[1];
+                                                                            *transmision[temp[op[1] - 1]] = TransmisionCarro();
+                                                                            break;
+                                                                    }
+
+
+                                                                }while(rep[4]);
+                                                            break;
+                                                    }
+                                                }while(rep[4] == 1);
+                                                break;
+                                            case 4:
                                             rep[4] = 0;
                                             break;
                                         default:

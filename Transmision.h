@@ -41,6 +41,7 @@ public:
     {
         this->clutch = clutch;
     }
+    virtual string claseTransmision() = 0;
     virtual void print(ostream &out) = 0;
     virtual void set(istream &in) = 0;
     friend ostream &operator<<(ostream &out, Transmision *transmision)
@@ -55,6 +56,7 @@ public:
         in>>transmision->tipoTransmision;
         cout<<"linea Transmision: ";
         in>>transmision->lineaTransmision;
+
     }
 };
 #endif //POO_PROJECT_TRANSMISION_H

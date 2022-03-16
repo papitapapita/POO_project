@@ -30,6 +30,9 @@ public:
     {
         return lineaTransmision;
     }
+    string claseTransmision() override{
+        return "Carro";
+    }
     void print(ostream &out)
     {
         out << "Diferencial: " << diferencial << endl
