@@ -44,7 +44,7 @@ public:
         this->fechaVenta = fechaVenta;
     }
 
-    Vehiculo *getVehiculo() const
+    Vehiculo *getVehiculo()
     {
         return vehiculo;
     }

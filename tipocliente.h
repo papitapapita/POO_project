@@ -22,5 +22,6 @@ public:
 
     virtual string tipoCliente() = 0;
     virtual void print() = 0;
+    virtual string showNombre() = 0;
 };
 #endif // POO_PROJECT_TIPOCLIENTE_H

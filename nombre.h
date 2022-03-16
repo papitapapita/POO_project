@@ -44,6 +44,16 @@ public:
     {
         this->apellido = apellido;
     }
+
+    friend istream &operator>>(istream &in, Nombre nombre)
+    {
+        cout << "Nombre: ";
+        in >> nombre.nombre;
+        cout << "Apellido: ";
+        in >> nombre.apellido;
+        return in;
+
+    }
 };
 
 #endif // POO_PROJECT_NOMBRE_H

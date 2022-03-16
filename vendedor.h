@@ -6,22 +6,26 @@
 #define POO_PROJECT_VENDEDOR_H
 #include "tipocliente.h"
 #include "cuenta.h"
-
+#include "vehiculo.h"
 using namespace std;
 
 class Vendedor : public Tipocliente
 {
     Cuenta *cuenta;
+    Vehiculo *vehiculo;
 
 public:
 
-    Vendedor():Tipocliente() {}
+    Vendedor():Tipocliente() {
+
+        vehiculo = Vehiculo();
+    }
 
     Vendedor(string nombre, string apellido, int numDocumento, string tipoDocumento, string nacionalidad, int dia,
-             int mes, int anio, int numCuenta, float saldo, string banco) : Tipocliente(nombre, apellido, numDocumento,
+             int mes, int anio, int numCuenta, float saldo, string banco, Vehiculo *vehiculo) : Tipocliente(nombre, apellido, numDocumento,
                                                                                         tipoDocumento, nacionalidad, dia, mes, anio)
     {
-
+        this->vehiculo = vehiculo;
         cuenta = new Cuenta(numCuenta, saldo, banco);
     }
 
@@ -30,12 +34,22 @@ public:
         return 2022 - fechaNacimiento->getAnio();
     }
 
+    string showNombre() override
+    {
+        return nombre->getNombre();
+    }
+
     string tipoCliente() override
     {
         return "Vendedor";
     }
 
-    void print(ostream &out)
+    void addVehiculo(Vehiculo *v)
+    {
+        this->vehiculo = v;
+    }
+
+    void print()
     {
         cout << "Edad: " << getEdad();
         cout << tipoCliente();
@@ -51,5 +65,20 @@ public:
     {
         this->cuenta = cuenta;
     }
+
+    void addVehiculo(Vehiculo *v){
+        this->vehiculo = v;
+    }
+
+    friend istream &operator>>(istream &in, Vendedor vendedor)
+    {
+        in >> vendedor.nombre;
+        in >> vendedor.documento;
+        in >> vendedor.fechaNacimiento;
+        in >> vendedor.cuenta;
+        return in;
+
+    }
+
 };
 #endif // POO_PROJECT_VENDEDOR_H

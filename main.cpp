@@ -41,6 +41,8 @@ int main()
     vector<Motorizados *> motorizado;
     vector<NoMotorizado *> noMotorizado;
     vector<Marca *> marca;
+    vector<Comprador *> comprador;
+    vector<Vendedor *> vendedor;
     int op[6];
     int rep[6];
     int temp[10];
@@ -898,9 +900,9 @@ int main()
                                             rep[5] = 1;
                                                 do
                                                 {
-                                                    cout << "1. Crear Carro\n"
-                                                         << "2. Ver Carro\n"
-                                                         << "3. Borrar Carro\n"
+                                                    cout << "1. Crear Camion\n"
+                                                         << "2. Ver Camion\n"
+                                                         << "3. Borrar Camion\n"
                                                          << "4. Regresar\n"
                                                          << ">> ";
                                                     cin >> op[5];
@@ -1106,33 +1108,139 @@ int main()
             rep[1] = 1;
             do
             {
-                cout << "1. Asesores\n"
-                     << "2. Clientes\n"
-                     << "3. Ventas\n"
-                     << "4. Regresar\n"
+                cout << "1. Clientes\n"
+                     << "2. Ventas\n"
+                     << "3. Regresar\n"
                      << ">> ";
+                cin >> op[1]
                 switch (op[1])
                 {
                 case 1:
                     rep[2] = 1;
                     do
                     {
-                        cout << "1. Crear Asesor\n"
-                             << "2. Ver Asesores\n"
-                             << "3. Borrar Asesores\n"
-                             << "4. Regresar\n"
+                        cout << "1. Comprador\n"
+                             << "2. Vendedor\n"
+                             << "3. Regresar\n"
                              << ">> ";
+                        cin >> op[2];
+                        switch (op[2])
+                        {
+                            case 1:
+                                rep[3] = 1;
+                                do{
+                                    cout << "1. Crear comprador\n"
+                                         << "2. Ver compradores\n"
+                                         << "3. Borrar comprador\n"
+                                         << "4. Regresar\n"
+                                         << ">> ";
+                                    cin >> op[3];
+                                    switch (op[3])
+                                    {
+                                        case 1:
+                                            comprador.pushback(new Comprador())
+                                            cin >> comprador.back();
+
+                                            break;
+                                        case 2:
+                                            i=0;
+                                            for(Comprador *comprador: comprador)
+                                            {
+                                                i++
+                                                comprador[i].print();
+                                                cout << "-----------------------" << endl;
+                                            }
+
+                                            break;
+                                        case 3:
+                                            i=0;
+                                            for(Comprador *comprador: comprador)
+                                            {
+                                                i++
+                                                comprador[i].showNombre();
+                                                cout << "-----------------------" << endl;
+                                            }
+                                            cin >> op[4]
+                                            comprador[op[4]-1]=Comprador();
+
+                                            break;
+                                        case 4:
+                                            rep[3]=0;
+
+                                            break;
+                                        default:
+                                            break;
+
+                                    }
+                                }while(!rep[3])
+                                break;
+
+                            case 2:
+                                rep[3] = 1;
+                                do{
+                                    cout << "1. Crear vendedor\n"
+                                         << "2. Ver vendedores\n"
+                                         << "3. Borrar vendedor\n"
+                                         << "4. Regresar\n"
+                                         << ">> ";
+                                    cin >> op[3];
+                                    switch (op[3])
+                                    {
+                                        case 1:
+                                            vendedor.pushback(new Vendedor())
+                                            cin >> vendedor.back();
+
+                                            break;
+                                        case 2:
+                                            i=0;
+                                            for(Vendedor *vendedor: vendedor)
+                                            {
+                                                i++
+                                                vendedor[i].print();
+                                                cout << "-----------------------" << endl;
+                                            }
+
+                                            break;
+                                        case 3:
+                                            i=0;
+                                            for(Vendedor *vendedor: vendedor)
+                                            {
+                                                i++
+                                                vendedor[i].showNombre();
+                                                cout << "-----------------------" << endl;
+                                            }
+                                            cin >> op[4]
+                                            Vendedor[op[4]-1]=Vendedor();
+
+                                            break;
+                                        case 4:
+                                            rep[3]=0;
+
+                                            break;
+                                        default:
+                                            break;
+
+                                    }
+                                }while(!rep[3])
+                                break;
+
+                            case 3:
+                                rep[2] == 0;
+                                break;
+
+                            default:
+                                break;
+                        }
                     } while (rep[2] == 1);
 
                     break;
                 case 2:
+                    //ventas
                     break;
                 case 3:
-                    break;
-                case 4:
-                    rep[1] = 0;
-                    break;
+                    rep[1] == 0;
 
+                    break;
                 default:
                     break;
                 }
