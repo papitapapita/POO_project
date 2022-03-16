@@ -33,5 +33,14 @@ public:
     {
         return "Carro";
     }
+    void print(ostream &out) override
+    {
+        out << "Cantidad Puestos: " << cantidadPuestos;
+    }
+    void set(istream &in) override
+    {
+        cout << "Cantidad Puestos: ";
+        in >> cantidadPuestos;
+    }
 };
 #endif // POO_PROJECT_CARRO_H

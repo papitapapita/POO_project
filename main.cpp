@@ -486,6 +486,65 @@ int main()
                                         switch (op[4])
                                         {
                                         case 1:
+                                            rep[5] = 1;
+                                            do
+                                            {
+                                                cout << "1. Crear Carro\n"
+                                                     << "2. Ver Carros\n"
+                                                     << "3. Borrar Carro\n"
+                                                     << "4. Regresar\n"
+                                                     << ">> ";
+                                                cin >> op[5];
+                                                switch (op[5])
+                                                {
+                                                case 1:
+                                                    vehiculo.push_back(new Carro());
+                                                    cin >> vehiculo.back();
+                                                    cout << "SELECCIÓN DE MARCA: \n"
+                                                         << "\t1. Crear nueva marca " << endl;
+                                                    for (Marca *marcas : marca)
+                                                    {
+                                                        i++;
+                                                        cout << "\t" << i << ". " << marcas->getNombre() << endl;
+                                                    }
+                                                    cin >> op[1];
+                                                    if (op[1] == 1)
+                                                    {
+                                                        marca.push_back(new Marca());
+                                                        cin >> marca.back();
+                                                        vehiculo.back()->setMarca(marca.back());
+                                                    }
+                                                    else
+                                                    {
+                                                        vehiculo.back()->setMarca(marca[op[1] - 1]);
+                                                    }
+                                                    break;
+                                                case 2:
+                                                    for (Carro *carros : carro)
+                                                    {
+                                                        i++;
+                                                        cout << i << ". " << carros->getTipo() << endl;
+                                                    }
+                                                    cin >> op[1];
+                                                    cout << carro[op[1] - 1];
+                                                    break;
+                                                case 3:
+                                                    for (Carro *carros : carro)
+                                                    {
+                                                        i++;
+                                                        cout << i << ". " << carros->getTipo() << endl;
+                                                    }
+                                                    cin >> op[1];
+                                                    *carro[op[1] - 1] = Carro();
+                                                    break;
+                                                case 4:
+                                                    rep[5] = 0;
+                                                    break;
+                                                default:
+                                                    break;
+                                                }
+                                            } while (rep[5] == 1);
+
                                             break;
                                         case 2:
                                             break;
