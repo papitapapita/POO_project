@@ -20,6 +20,12 @@ public:
     {
         return "Moto";
     }
+    void print(ostream &out) override
+    {
+    }
+    void set(istream &in) override
+    {
+    }
 };
 
 #endif // POO_PROJECT_PLATAFORMAMANEJOMOTO_H
