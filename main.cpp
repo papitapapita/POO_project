@@ -41,8 +41,6 @@ int main()
     vector<Motorizados *> motorizado;
     vector<NoMotorizado *> noMotorizado;
     vector<Marca *> marca;
-    vector<Bicicleta *> bicicleta;
-    vector<Carro *> carro;
     int op[6];
     int rep[6];
     int temp[10];
@@ -559,69 +557,8 @@ int main()
                                             do
                                             {
                                                 cout << "1. Crear Carro\n"
-                                                     << "2. Ver Carros\n"
+                                                     << "2. Ver Carro\n"
                                                      << "3. Borrar Carro\n"
-                                                     << "4. Regresar\n"
-                                                     << ">> ";
-                                                cin >> op[5];
-                                                switch (op[5])
-                                                {
-                                                case 1:
-                                                    motorizado.push_back(new Carro());
-                                                    cin >> motorizado.back();
-                                                    cout << "SELECCIÓN DE MARCA: \n"
-                                                         << "\t1. Crear nueva marca " << endl;
-                                                    for (Marca *marcas : marca)
-                                                    {
-                                                        i++;
-                                                        cout << "\t" << i << ". " << marcas->getNombre() << endl;
-                                                    }
-                                                    cin >> op[1];
-                                                    if (op[1] == 1)
-                                                    {
-                                                        marca.push_back(new Marca());
-                                                        cin >> marca.back();
-                                                        motorizado.back()->setMarca(marca.back());
-                                                    }
-                                                    else
-                                                    {
-                                                        motorizado.back()->setMarca(marca[op[1] - 1]);
-                                                    }
-                                                    break;
-                                                case 2:
-                                                    for (Carro *carros : carro)
-                                                    {
-                                                        i++;
-                                                        cout << i << ". " << carros->getTipo() << endl;
-                                                    }
-                                                    cin >> op[1];
-                                                    cout << carro[op[1] - 1];
-                                                    break;
-                                                case 3:
-                                                    for (Carro *carros : carro)
-                                                    {
-                                                        i++;
-                                                        cout << i << ". " << carros->getTipo() << endl;
-                                                    }
-                                                    cin >> op[1];
-                                                    *carro[op[1] - 1] = Carro();
-                                                    break;
-                                                case 4:
-                                                    rep[5] = 0;
-                                                    break;
-                                                default:
-                                                    break;
-                                                }
-                                            } while (rep[5] == 1);
-
-                                            break;
-                                        case 2:
-                                            rep[5] = 1;
-                                            do
-                                            {
-                                                cout << "1. Crear Moto\n"
-                                                     << "2. Ver Moto\n"
-                                                     << "3. Borrar Moto\n"
                                                      << "4. Regresar\n"
                                                      << ">> ";
                                                 cin >> op[5];
@@ -689,10 +626,15 @@ int main()
                                                          << "\t1. Crear nueva Plataforma y Manejo " << endl;
                                                     for (PlataformaManejo *plataformas : plataformaManejo)
                                                     {
-                                                        i++;
-                                                        cout << "\t" << i << ". " << plataformas->getNombre() << endl;
+                                                        result = plataformas->TipoPlataformaManejo();
+                                                        if (result == "Carro")
+                                                        {
+                                                            temp[i] = i2;
+                                                            i++;
+                                                            cout << i << ". " << plataformas->getNombre() << endl;
+                                                        }
+                                                        i2++;
                                                     }
-                                                    cin >> op[1];
                                                     if (op[1] == 1)
                                                     {
                                                         plataformaManejo.push_back(new PlataformaManejoCarro());
@@ -701,26 +643,49 @@ int main()
                                                     }
                                                     else
                                                     {
-                                                        motorizado.back()->setPlataformaManejo(plataformaManejo[op[1] - 1]);
+                                                        motorizado.back()->setPlataformaManejo(plataformaManejo[temp[op[1] - 1]]);
                                                     }
-                                                    break;
-                                                case 2:
-                                                    for (Carro *carros : carro)
+                                                    cout << "SELECCIÓN DE TRANSMISIÓN: \n"
+                                                         << "\t1. Crear nueva Transmisión " << endl;
+                                                    for (Transmision *trans : transmision)
                                                     {
-                                                        i++;
-                                                        cout << i << ". " << carros->getTipo() << endl;
+                                                        result = trans->claseTransmision();
+                                                        if (result == "Carro")
+                                                        {
+                                                            temp[i] = i2;
+                                                            i++;
+                                                            cout << i << ". " << trans->getTipoTransmision() << endl;
+                                                        }
+                                                        i2++;
                                                     }
                                                     cin >> op[1];
-                                                    cout << carro[op[1] - 1];
+                                                    if (op[1] == 1)
+                                                    {
+                                                        transmision.push_back(new TransmisionCarro());
+                                                        cin >> transmision.back();
+                                                        motorizado.back()->setTransmision(transmision.back());
+                                                    }
+                                                    else
+                                                    {
+                                                        motorizado.back()->setTransmision(transmision[temp[op[1] - 1]]);
+                                                    }
+                                                case 2:
+                                                    for (Motorizados *motorizados : motorizado)
+                                                    {
+                                                        i++;
+                                                        cout << i << ". " << motorizados->getTipo() << endl;
+                                                    }
+                                                    cin >> op[1];
+                                                    cout << motorizado[op[1] - 1];
                                                     break;
                                                 case 3:
-                                                    for (Carro *carros : carro)
+                                                    for (Motorizados *motorizados : motorizado)
                                                     {
                                                         i++;
-                                                        cout << i << ". " << carros->getTipo() << endl;
+                                                        cout << i << ". " << motorizados->getTipo() << endl;
                                                     }
                                                     cin >> op[1];
-                                                    *carro[op[1] - 1] = Carro();
+                                                    *motorizado[op[1] - 1] = Carro();
                                                     break;
                                                 case 4:
                                                     rep[5] = 0;
@@ -729,6 +694,9 @@ int main()
                                                     break;
                                                 }
                                             } while (rep[5] == 1);
+
+                                            break;
+                                        case 2:
                                             break;
                                         case 3:
                                             break;
@@ -838,7 +806,6 @@ int main()
         default:
             break;
         }
-
     } while (rep[0] == 1);
 
     return 0;
