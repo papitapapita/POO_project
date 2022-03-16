@@ -51,12 +51,15 @@ public:
         transmision->print(out);
         return out;
     }
-    friend istream &operator>>(istream &in, Transmision *transmision){
-        cout<<"tipo Transmision: ";
-        in>>transmision->tipoTransmision;
-        cout<<"linea Transmision: ";
-        in>>transmision->lineaTransmision;
+    friend istream &operator>>(istream &in, Transmision *transmision)
+    {
+        cout << "tipo Transmision: ";
+        in >> transmision->tipoTransmision;
+        cout << "linea Transmision: ";
+        in >> transmision->lineaTransmision;
+        transmision->set(in);
+        return in;
 
     }
 };
-#endif //POO_PROJECT_TRANSMISION_H
+#endif // POO_PROJECT_TRANSMISION_H

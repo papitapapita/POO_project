@@ -152,6 +152,7 @@ public:
     }
     virtual string claseVehiculo() = 0;
     virtual void print(ostream &out) = 0;
+    virtual void set(istream &in) = 0;
     friend ostream &operator<<(ostream &out, Vehiculo *vehiculo)
     {
         out << "Manejo: " << vehiculo->manejo << endl
@@ -166,12 +167,40 @@ public:
             << "Potencia: " << vehiculo->potencia << endl
             << "Torque: " << vehiculo->torque << endl
             << "Tipo: " << vehiculo->tipo << endl
-            << "Marca: " << vehiculo->marca << endl
-            << "Llantas: " << vehiculo->llantas << endl;
+            << "Marca: " << vehiculo->marca->getNombre() << endl
+            << "Llantas: " << vehiculo->llantas->getTipo() << endl;
         vehiculo->print(out);
         return out;
     }
+    friend istream &operator>>(istream &in, Vehiculo *vehiculo)
+    {
+        cout << "Manejo: ";
+        in >> vehiculo->manejo;
+        cout << "Frenado: ";
+        in >> vehiculo->frenado;
+        cout << "Offroad: ";
+        in >> vehiculo->offroad;
+        cout << "Valor: ";
+        in >> vehiculo->valor;
+        cout << "Salida: ";
+        in >> vehiculo->salida;
+        cout << "Aceleración: ";
+        in >> vehiculo->aceleracion;
+        cout << "Velocidad: ";
+        in >> vehiculo->velocidad;
+        cout << "Peso: ";
+        in >> vehiculo->peso;
+        cout << "Modelo: ";
+        in >> vehiculo->modelo;
+        cout << "Potencia: ";
+        in >> vehiculo->potencia;
+        cout << "Torque: ";
+        in >> vehiculo->torque;
+        cout << "Tipo: ";
+        in >> vehiculo->tipo;
+        vehiculo->set(in);
+        return in;
+    }
 };
 
-
-#endif //POO_PROJECT_VEHICULO_H
+#endif // POO_PROJECT_VEHICULO_H
