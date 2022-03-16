@@ -57,16 +57,15 @@ public:
         this->anio = anio;
     }
 
-    friend istream &operator>>(istream &in, Fecha fecha)
+    friend istream &operator>>(istream &in, Fecha *fecha)
     {
         cout << "Dia de nacimiento: ";
-        in >> fecha.dia;
+        in >> fecha->dia;
         cout << "Mes de nacimiento: ";
-        in >> fecha.mes;
+        in >> fecha->mes;
         cout << "Año de nacimiento: ";
-        in >> fecha.anio;
+        in >> fecha->anio;
         return in;
-
     }
 };
 #endif // POO_PROJECT_FECHA_H

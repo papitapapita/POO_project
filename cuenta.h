@@ -67,16 +67,15 @@ public:
         this->banco = banco;
     }
 
-    friend istream &operator>>(istream &in, Cuenta cuenta)
+    friend istream &operator>>(istream &in, Cuenta *cuenta)
     {
         cout << "Banco: ";
-        in >> cuenta.banco;
+        in >> cuenta->banco;
         cout << "N de cuenta: ";
-        in >> cuenta.numCuenta;
+        in >> cuenta->numCuenta;
         cout << "Saldo: ";
-        in >> cuenta.saldo;
+        in >> cuenta->saldo;
         return in;
-
     }
 };
 #endif // POO_PROJECT_CUENTA_H

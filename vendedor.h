@@ -15,15 +15,13 @@ class Vendedor : public Tipocliente
     Vehiculo *vehiculo;
 
 public:
-
-    Vendedor():Tipocliente() {
-
-        vehiculo = Vehiculo();
+    Vendedor() : Tipocliente()
+    {
     }
 
     Vendedor(string nombre, string apellido, int numDocumento, string tipoDocumento, string nacionalidad, int dia,
              int mes, int anio, int numCuenta, float saldo, string banco, Vehiculo *vehiculo) : Tipocliente(nombre, apellido, numDocumento,
-                                                                                        tipoDocumento, nacionalidad, dia, mes, anio)
+                                                                                                            tipoDocumento, nacionalidad, dia, mes, anio)
     {
         this->vehiculo = vehiculo;
         cuenta = new Cuenta(numCuenta, saldo, banco);
@@ -66,19 +64,13 @@ public:
         this->cuenta = cuenta;
     }
 
-    void addVehiculo(Vehiculo *v){
-        this->vehiculo = v;
-    }
-
-    friend istream &operator>>(istream &in, Vendedor vendedor)
+    friend istream &operator>>(istream &in, Vendedor *vendedor)
     {
-        in >> vendedor.nombre;
-        in >> vendedor.documento;
-        in >> vendedor.fechaNacimiento;
-        in >> vendedor.cuenta;
+        in >> vendedor->nombre;
+        in >> vendedor->documento;
+        in >> vendedor->fechaNacimiento;
+        in >> vendedor->cuenta;
         return in;
-
     }
-
 };
 #endif // POO_PROJECT_VENDEDOR_H

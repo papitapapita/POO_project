@@ -16,9 +16,8 @@ class Comprador : public Tipocliente
     Cuenta *cuenta;
 
 public:
-    Comprador(): Tipocliente(){
-
-        cuenta = Cuenta();
+    Comprador() : Tipocliente()
+    {
     }
     Comprador(string nombre, string apellido, int numDocumento, string tipoDocumento, string nacionalidad, int dia,
               int mes, int anio, int numCuenta, float saldo, string banco) : Tipocliente(nombre, apellido, numDocumento,
@@ -50,7 +49,8 @@ public:
         cuenta->print();
     }
 
-    float getSaldoCuenta(){
+    float getSaldoCuenta()
+    {
         return cuenta->getSaldo();
     }
 
@@ -64,14 +64,13 @@ public:
         this->cuenta = cuenta;
     }
 
-    friend istream &operator>>(istream &in, Comprador comprador)
+    friend istream &operator>>(istream &in, Comprador *comprador)
     {
-        in >> comprador.nombre;
-        in >> comprador.documento;
-        in >> comprador.fechaNacimiento;
-        in >> comprador.cuenta;
+        in >> comprador->nombre;
+        in >> comprador->documento;
+        in >> comprador->fechaNacimiento;
+        in >> comprador->cuenta;
         return in;
-
     }
 };
 #endif // POO_PROJECT_COMPRADOR_H

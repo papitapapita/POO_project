@@ -45,14 +45,13 @@ public:
         this->apellido = apellido;
     }
 
-    friend istream &operator>>(istream &in, Nombre nombre)
+    friend istream &operator>>(istream &in, Nombre *nombre)
     {
         cout << "Nombre: ";
-        in >> nombre.nombre;
+        in >> nombre->nombre;
         cout << "Apellido: ";
-        in >> nombre.apellido;
+        in >> nombre->apellido;
         return in;
-
     }
 };
 
