@@ -17,6 +17,8 @@ class Comprador : public Tipocliente
 
 public:
     Comprador(): Tipocliente(){
+
+        cuenta = Cuenta();
     }
     Comprador(string nombre, string apellido, int numDocumento, string tipoDocumento, string nacionalidad, int dia,
               int mes, int anio, int numCuenta, float saldo, string banco) : Tipocliente(nombre, apellido, numDocumento,
@@ -28,6 +30,11 @@ public:
     int getEdad() override
     {
         return 2022 - fechaNacimiento->getAnio();
+    }
+
+    string showNombre() override
+    {
+        return nombre->getNombre();
     }
 
     string tipoCliente() override
@@ -43,6 +50,10 @@ public:
         cuenta->print();
     }
 
+    float getSaldoCuenta(){
+        return cuenta->getSaldo();
+    }
+
     Cuenta getCuenta()
     {
         return *cuenta;
@@ -51,6 +62,16 @@ public:
     void setCuenta(Cuenta *cuenta)
     {
         this->cuenta = cuenta;
+    }
+
+    friend istream &operator>>(istream &in, Comprador comprador)
+    {
+        in >> comprador.nombre;
+        in >> comprador.documento;
+        in >> comprador.fechaNacimiento;
+        in >> comprador.cuenta;
+        return in;
+
     }
 };
 #endif // POO_PROJECT_COMPRADOR_H

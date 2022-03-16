@@ -59,5 +59,19 @@ public:
     {
         this->nacionalidad = nacionalidad;
     }
+
+    friend istream &operator>>(istream &in, Documento documento)
+    {
+        cout << "N de documento: ";
+        in >> documento.numDocumento;
+        cout << "Tipo de documento: ";
+        in >> documento.tipoDocumento;
+        cout << "Tipo de documento: ";
+        in >> documento.tipoDocumento;
+        cout << "Nacionalidad: ";
+        in >> documento.nacionalidad;
+        return in;
+
+    }
 };
 #endif // POO_PROJECT_DOCUMENTO_H
