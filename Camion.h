@@ -33,5 +33,14 @@ public:
     {
         return "Camion";
     }
+    void print(ostream &out) override
+    {
+        out << "Cantidad Puestos: " << capacidadCarga;
+    }
+    void set(istream &in) override
+    {
+        cout << "Cantidad Puestos: ";
+        in >> capacidadCarga;
+    }
 };
 #endif // POO_PROJECT_CAMION_H

@@ -33,6 +33,12 @@ public:
     {
         return "Moto";
     }
+    void print(ostream &out){
+
+    }
+    void set(istream &in){
+
+    }
 };
 
 #endif //POO_PROJECT_MOTO_H
