@@ -12,7 +12,7 @@ protected:
     bool clutch;
 
 public:
-    virtual bool Automatico() = 0;
+    virtual string automatico() = 0;
 };
 
-#endif //POO_PROJECT_TIPOCONDUCCION_H
+#endif // POO_PROJECT_TIPOCONDUCCION_H

@@ -19,7 +19,18 @@ public:
     }
     void print(ostream &out)
     {
-        out << "Automatico: " << Automatico();
+        out << "Automatico: " << automatico();
+    }
+    string automatico() override
+    {
+        if (clutch)
+        {
+            return "Sí";
+        }
+        else
+        {
+            return "No";
+        }
     }
 };
-#endif //POO_PROJECT_TRANSMISIONMOTO_H
+#endif // POO_PROJECT_TRANSMISIONMOTO_H

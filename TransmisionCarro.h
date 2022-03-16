@@ -30,19 +30,32 @@ public:
     {
         return lineaTransmision;
     }
-    string claseTransmision() override{
+    string claseTransmision() override
+    {
         return "Carro";
     }
-    void print(ostream &out)
+    void print(ostream &out) override
     {
         out << "Diferencial: " << diferencial << endl
-            << "Linea de Transmisión: " << lineaTransmision << "Automático: " << Automatico();
+            << "Linea de Transmisión: " << lineaTransmision << "Automático: " << automatico();
     }
-    void set(istream &in) override{
-        cout<<"diferencial: ";
-        in>>diferencial;
-        cout<<"linea Transmision: ";
-        in>>lineaTransmision;
+    string automatico() override
+    {
+        if (clutch)
+        {
+            return "Sí";
+        }
+        else
+        {
+            return "No";
+        }
+    }
+    void set(istream &in) override
+    {
+        cout << "diferencial: ";
+        in >> diferencial;
+        cout << "linea Transmision: ";
+        in >> lineaTransmision;
     }
 };
-#endif //POO_PROJECT_TRANSMISIONCARRO_H
+#endif // POO_PROJECT_TRANSMISIONCARRO_H
