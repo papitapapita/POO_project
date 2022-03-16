@@ -35,5 +35,11 @@ public:
         out << "Diferencial: " << diferencial << endl
             << "Linea de Transmisión: " << lineaTransmision << "Automático: " << Automatico();
     }
+    void set(istream &in) override{
+        cout<<"diferencial: ";
+        in>>diferencial;
+        cout<<"linea Transmision: ";
+        in>>lineaTransmision;
+    }
 };
 #endif //POO_PROJECT_TRANSMISIONCARRO_H

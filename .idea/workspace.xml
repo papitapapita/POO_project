@@ -14,8 +14,8 @@
   <component name="ChangeListManager">
     <list default="true" id="8c2c0003-6211-42a0-bcf0-96dc6822ce94" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PlataformaManejoCarro.h" beforeDir="false" afterPath="$PROJECT_DIR$/PlataformaManejoCarro.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PlataformaManejoMoto.h" beforeDir="false" afterPath="$PROJECT_DIR$/PlataformaManejoMoto.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Transmision.h" beforeDir="false" afterPath="$PROJECT_DIR$/Transmision.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TransmisionCarro.h" beforeDir="false" afterPath="$PROJECT_DIR$/TransmisionCarro.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -87,6 +87,7 @@
       <workItem from="1647316730265" duration="49000" />
       <workItem from="1647317763692" duration="3000" />
       <workItem from="1647358755734" duration="1024000" />
+      <workItem from="1647391115743" duration="2153000" />
     </task>
     <servers />
   </component>

@@ -42,12 +42,19 @@ public:
         this->clutch = clutch;
     }
     virtual void print(ostream &out) = 0;
+    virtual void set(istream &in) = 0;
     friend ostream &operator<<(ostream &out, Transmision *transmision)
     {
         out << "Tipo de Transmisión: " << transmision->tipoTransmision << endl
             << "Clutch: " << (transmision->clutch ? "Sí" : "No") << endl;
         transmision->print(out);
         return out;
+    }
+    friend istream &operator>>(istream &in, Transmision *transmision){
+        cout<<"tipo Transmision: ";
+        in>>transmision->tipoTransmision;
+        cout<<"linea Transmision: ";
+        in>>transmision->lineaTransmision;
     }
 };
 #endif //POO_PROJECT_TRANSMISION_H
