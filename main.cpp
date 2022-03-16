@@ -529,6 +529,61 @@ int main()
                                                         }
                                                     } while (rep[4]);
                                                     break;
+                                                    case 2:
+                                                        rep[4] = 1;
+                                                        do
+                                                        {
+                                                            cout << "1. Crear transmision"
+                                                                 << "2. Ver transmision\n"
+                                                                 << "3. Borrar transmision\n"
+                                                                 << "4. Regresar\n"
+                                                                 << ">> ";
+                                                            cin >> op[6];
+                                                            switch (op[6])
+                                                            {
+                                                                case 1:
+                                                                    transmision.push_back(new TransmisionMoto());
+                                                                    cin >> transmision.back();
+                                                                    break;
+                                                                case 2:
+                                                                    op[1] = 0;
+                                                                    i = 0;
+                                                                    i2 = 0;
+                                                                    for (Transmision *trans : transmision)
+                                                                    {
+                                                                        result = trans->claseTransmision();
+                                                                        if (result == "Moto")
+                                                                        {
+                                                                            temp[i] = i2;
+                                                                            i++;
+                                                                            cout << i << ". " << trans->getTipoTransmision() << endl;
+                                                                        }
+                                                                        i2++;
+                                                                    }
+                                                                    cin >> op[1];
+                                                                    cout << transmision[temp[op[1] - 1]];
+                                                                    break;
+                                                                case 3:
+                                                                    op[1] = 0;
+                                                                    i = 0;
+                                                                    i2 = 0;
+                                                                    for (Transmision *trans : transmision)
+                                                                    {
+                                                                        result = trans->claseTransmision();
+                                                                        if (result == "Moto")
+                                                                        {
+                                                                            temp[i] = i2;
+                                                                            i++;
+                                                                            cout << i << ". " << trans->getTipoTransmision() << endl;
+                                                                        }
+                                                                        i2++;
+                                                                    }
+                                                                    cin >> op[1];
+                                                                    *transmision[temp[op[1] - 1]] = TransmisionMoto();
+                                                                    break;
+                                                            }
+                                                        } while (rep[4]);
+                                                        break;
                                                 }
                                             } while (rep[4] == 1);
                                             break;

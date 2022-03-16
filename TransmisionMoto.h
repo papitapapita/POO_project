@@ -17,6 +17,9 @@ public:
     TransmisionMoto(string tipoTransmision, bool clutch) : Transmision(tipoTransmision, clutch)
     {
     }
+    virtual string claseTransmision(){
+        return "Moto";
+    };
     void print(ostream &out)
     {
         out << "Automatico: " << automatico();
@@ -31,6 +34,9 @@ public:
         {
             return "No";
         }
+    }
+    void set(istream &in) override
+    {
     }
 };
 #endif // POO_PROJECT_TRANSMISIONMOTO_H
