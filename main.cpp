@@ -457,6 +457,7 @@ int main()
                                                     } while (rep[5] == 1);
                                                     break;
                                                 case 4:
+                                                    rep[5] = 0;
                                                     break;
 
                                                 default:
@@ -528,8 +529,11 @@ int main()
                                                             cin >> op[1];
                                                             *transmision[temp[op[1] - 1]] = TransmisionCarro();
                                                             break;
+                                                            case 4:
+                                                                rep[4] = 0;
+                                                                break;
                                                         }
-                                                    } while (rep[4]);
+                                                    } while (rep[4] == 1);
                                                     break;
                                                     case 2:
                                                         rep[4] = 1;
@@ -582,6 +586,9 @@ int main()
                                                                     }
                                                                     cin >> op[1];
                                                                     *transmision[temp[op[1] - 1]] = TransmisionMoto();
+                                                                    break;
+                                                                case 4:
+                                                                    rep[4] = 0;
                                                                     break;
                                                             }
                                                         } while (rep[4]);
