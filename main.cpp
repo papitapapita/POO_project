@@ -43,7 +43,9 @@ int main()
     vector<Carro *> carro;
     int op[6];
     int rep[6];
+    int temp[10];
     int i = 1;
+    int i2 = 1;
     string result;
     rep[0] = 1;
     do
@@ -288,29 +290,40 @@ int main()
                                                             cin >> plataformaManejo.back();
                                                             break;
                                                         case 2:
+                                                            op[1] = 0;
                                                             i = 0;
+                                                            i2 = 0;
                                                             for (PlataformaManejo *plataformas : plataformaManejo)
                                                             {
-                                                                i++;
                                                                 result = plataformas->TipoPlataformaManejo();
                                                                 if (result == "Carro")
                                                                 {
+                                                                    temp[i] = i2;
+                                                                    i++;
                                                                     cout << i << ". " << plataformas->getNombre() << endl;
                                                                 }
+                                                                i2++;
                                                             }
                                                             cin >> op[1];
-                                                            cout << plataformaManejo[op[1] - 1];
+                                                            cout << plataformaManejo[temp[op[1] - 1]];
                                                             break;
                                                         case 3:
                                                             op[1] = 0;
                                                             i = 0;
-                                                            for (Motor *motores : motor)
+                                                            i2 = 0;
+                                                            for (PlataformaManejo *plataformas : plataformaManejo)
                                                             {
-                                                                i++;
-                                                                cout << i << ". " << motores->getNombre() << endl;
+                                                                result = plataformas->TipoPlataformaManejo();
+                                                                if (result == "Carro")
+                                                                {
+                                                                    temp[i] = i2;
+                                                                    i++;
+                                                                    cout << i << ". " << plataformas->getNombre() << endl;
+                                                                }
+                                                                i2++;
                                                             }
                                                             cin >> op[1];
-                                                            *motor[op[1] - 1] = Motor();
+                                                            *plataformaManejo[temp[op[1] - 1]] = PlataformaManejoCarro();
                                                             break;
                                                         case 4:
                                                             rep[5] = 0;
@@ -322,8 +335,124 @@ int main()
 
                                                     break;
                                                 case 2:
+                                                    rep[6] = 1;
+                                                    do
+                                                    {
+                                                        cout << "1. Crear Plataforma y Manejo\n"
+                                                             << "2. Ver Plataformas y Manejo\n"
+                                                             << "3. Borrar Plataformas y Manejo\n"
+                                                             << "4. Regresar\n"
+                                                             << ">> ";
+                                                        cin >> op[6];
+                                                        switch (op[6])
+                                                        {
+                                                        case 1:
+                                                            plataformaManejo.push_back(new PlataformaManejoMoto());
+                                                            cin >> plataformaManejo.back();
+                                                            break;
+                                                        case 2:
+                                                            op[1] = 0;
+                                                            i = 0;
+                                                            i2 = 0;
+                                                            for (PlataformaManejo *plataformas : plataformaManejo)
+                                                            {
+                                                                result = plataformas->TipoPlataformaManejo();
+                                                                if (result == "Moto")
+                                                                {
+                                                                    temp[i] = i2;
+                                                                    i++;
+                                                                    cout << i << ". " << plataformas->getNombre() << endl;
+                                                                }
+                                                                i2++;
+                                                            }
+                                                            cin >> op[1];
+                                                            cout << plataformaManejo[temp[op[1] - 1]];
+                                                            break;
+                                                        case 3:
+                                                            op[1] = 0;
+                                                            i = 0;
+                                                            i2 = 0;
+                                                            for (PlataformaManejo *plataformas : plataformaManejo)
+                                                            {
+                                                                result = plataformas->TipoPlataformaManejo();
+                                                                if (result == "Moto")
+                                                                {
+                                                                    temp[i] = i2;
+                                                                    i++;
+                                                                    cout << i << ". " << plataformas->getNombre() << endl;
+                                                                }
+                                                                i2++;
+                                                            }
+                                                            cin >> op[1];
+                                                            *plataformaManejo[temp[op[1] - 1]] = PlataformaManejoMoto();
+                                                            break;
+                                                        case 4:
+                                                            rep[5] = 0;
+                                                            break;
+                                                        default:
+                                                            break;
+                                                        }
+                                                    } while (rep[5] == 1);
                                                     break;
                                                 case 3:
+                                                    rep[6] = 1;
+                                                    do
+                                                    {
+                                                        cout << "1. Crear Plataforma y Manejo\n"
+                                                             << "2. Ver Plataformas y Manejo\n"
+                                                             << "3. Borrar Plataformas y Manejo\n"
+                                                             << "4. Regresar\n"
+                                                             << ">> ";
+                                                        cin >> op[6];
+                                                        switch (op[6])
+                                                        {
+                                                        case 1:
+                                                            plataformaManejo.push_back(new PlataformaManejoCarro());
+                                                            cin >> plataformaManejo.back();
+                                                            break;
+                                                        case 2:
+                                                            op[1] = 0;
+                                                            i = 0;
+                                                            i2 = 0;
+                                                            for (PlataformaManejo *plataformas : plataformaManejo)
+                                                            {
+                                                                result = plataformas->TipoPlataformaManejo();
+                                                                if (result == "Carro")
+                                                                {
+                                                                    temp[i] = i2;
+                                                                    i++;
+                                                                    cout << i << ". " << plataformas->getNombre() << endl;
+                                                                }
+                                                                i2++;
+                                                            }
+                                                            cin >> op[1];
+                                                            cout << plataformaManejo[temp[op[1] - 1]];
+                                                            break;
+                                                        case 3:
+                                                            op[1] = 0;
+                                                            i = 0;
+                                                            i2 = 0;
+                                                            for (PlataformaManejo *plataformas : plataformaManejo)
+                                                            {
+                                                                result = plataformas->TipoPlataformaManejo();
+                                                                if (result == "Carro")
+                                                                {
+                                                                    temp[i] = i2;
+                                                                    i++;
+                                                                    cout << i << ". " << plataformas->getNombre() << endl;
+                                                                }
+                                                                i2++;
+                                                            }
+                                                            cin >> op[1];
+                                                            *plataformaManejo[temp[op[1] - 1]] = PlataformaManejoCarro();
+                                                            break;
+                                                        case 4:
+                                                            rep[5] = 0;
+                                                            break;
+                                                        default:
+                                                            break;
+                                                        }
+                                                    } while (rep[5] == 1);
                                                     break;
                                                 case 4:
                                                     break;
